@@ -1,4 +1,4 @@
-### Map Collection Explorer
+### Map Explorer template
 
 <a href="http://www.esri.com/esri-news/releases/14-3qtr/new-york-to-la-history-of-americas-maps-in-one-app" target="_blank">Description</a>
 
@@ -22,26 +22,26 @@ Another important configuration parameter is the url to the ArcGIS Image Service
 "IMAGE_SERVER": "<image service url>"
 ```
 <br />
-A downloadable version of this document can be found <a href="https://github.com/ChrisMahlke/explorer/blob/master/explorer_documentation.pdf?raw=true" target="_blank">here</a>.
+A downloadable version of this document can be found <a href="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/explorer_documentation.pdf?raw=true" target="_blank">here</a>.
 <br />
 <br />
 ###### Application header
-<img src="https://raw.githubusercontent.com/ChrisMahlke/explorer/master/header.png">
+<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/header.png">
 <br />
 <br />
 <br />
 ###### Application sidebar
-<img src="https://raw.githubusercontent.com/ChrisMahlke/explorer/master/sidebar.png" width="83%">
+<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/sidebar.png" width="83%">
 <br />
 <br />
 <br />
 ###### Map
-<img src="https://raw.githubusercontent.com/ChrisMahlke/explorer/master/map.png" width="83%">
+<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/map.png" width="83%">
 <br />
 <br />
 <br />
 ###### Timeline
-<img src="https://raw.githubusercontent.com/ChrisMahlke/explorer/master/timeline.png">
+<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/timeline.png">
 <br />
 <br />
 <br />
@@ -61,8 +61,6 @@ A downloadable version of this document can be found <a href="https://github.com
 
 ##### USGS Historical Topographic Map Explorer
 <a href="http://historicalmaps.arcgis.com/usgs/" target="_blank">Production</a>
-<br />
-<a href="http://chrismahlke.github.io/explorer" target="_blank">Development</a>
 <br />
 ##### Landsat 8 Map Explorer
 (Requires an ArcGIS Online organizational account)
