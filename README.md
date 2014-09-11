@@ -4,6 +4,11 @@
 
 #### Instructions
 
+1. Download and unzip the .zip file or clone the repository.
+2. Web-enable the directory.
+3. Access the .html page.
+4. Configure the parameters in the <a href="https://github.com/ChrisMahlke/explorer/blob/master/config/defaults.js" target="_blank">configuration file</a>.
+
 The configuration file can be found <a href="https://github.com/ChrisMahlke/explorer/blob/master/config/defaults.js" target="_blank">here</a>.
 
 The configuration options are listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
@@ -120,13 +125,6 @@ The template consists of the following folders and files:
 **index.html**: The default html file for the application.
 
 **configurationPanel.js** Default configuration panel settings for the template. This is only applicable to configurable templates. This example will create a configuration panel with one dropdown list that contains three template color choices (seaside, chrome, pavement). When the templateConfig.js module retrieves any configurable settings you'll get the theme name back in a parameter named theme. Then you can apply the necessary css to your application to apply the new colors - like change the border color etc. See the [Adding configurable parameters to templates](http://resources.arcgis.com/en/help/arcgisonline/#/Adding_configurable_parameters_to_templates/010q000000ns000000/) help topic for more details.
-
-#### Instructions
-
-1. Download and unzip the .zip file or clone the repository.
-2. Web-enable the directory.
-3. Access the .html page.
-4. Configure the parameters in the <a href="https://github.com/ChrisMahlke/explorer/blob/master/config/defaults.js" target="_blank">configuration file</a>.
 
 #### Issues
 
