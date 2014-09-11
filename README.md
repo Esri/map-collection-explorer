@@ -1,4 +1,4 @@
-### Map Explorer template
+### Map Collection Explorer
 
 <a href="http://www.esri.com/esri-news/releases/14-3qtr/new-york-to-la-history-of-americas-maps-in-one-app" target="_blank">Description</a>
 
