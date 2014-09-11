@@ -1,0 +1,119 @@
+/*div.timeline-event-content {
+	font-size: 0.65em;
+	width: 65px !important;
+	height: 35px;
+}
+
+div.timeline-event-content:hover {
+	cursor: pointer;
+}
+*/
+
+div.withThumbnail {
+	font-size: 0.65em;
+	width: 65px;
+	height: 35px;
+}
+
+div.withThumbnail:hover {
+	cursor: pointer;
+	color: #ffffff;
+}
+
+div.noThumbnail {
+	font-size: 0.70em;
+	width: 75px;
+	height: 15px;
+}
+
+div.noThumbnail:hover {
+	cursor: pointer;
+	color: #ffffff;
+}
+
+div.timeline-event-box.inScale {
+	background-color: #363636;
+	color: #fafafa;
+}
+
+div.timeline-event-line.notInScale {
+	border-width: 1px;
+	opacity: 0.5;
+}
+
+div.timeline-event-box.notInScale {
+	background-color: #dddddd;
+	color: #333333;
+	opacity: 0.5;
+}
+
+div.timeline-event-line.notInScale {
+	border-width: 1px;
+	border-color: #bfbfbf;
+	opacity: 0.5;
+}
+
+.customTooltip {
+	width: 300px;
+}
+
+div.timeline-event-box.one {
+	background-color: #00EB89;
+	color: #f9f9f9;
+}
+
+div.timeline-event-box.two {
+	background-color: #00C49D;
+	color: #f9f9f9;
+}
+
+div.timeline-event-box.three {
+	background-color: #009CB0;
+	color: #f9f9f9;
+}
+
+div.timeline-event-box.four {
+	background-color: #0075C4;
+	color: #f9f9f9;
+}
+
+div.timeline-event-box.five {
+	background-color: #004ED7;
+	color: #f9f9f9;
+}
+
+/* Timeline axis text/labels */
+div.timeline-axis-text {
+	color: #606060;
+	padding: 3px;
+	white-space: nowrap;
+	font-size: 0.75em;
+	margin-left: -15px;
+	margin-top: 5px;
+	font-weight: 500;
+}
+
+/* */
+div.timeline-event-dot {
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+div.timeline-event-box {
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.timeline-event-hover {
+	border: 2px solid red;
+}
+
+.timeline-content-image {
+	width: 20px;
+	height: auto;
+}

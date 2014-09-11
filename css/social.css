@@ -1,0 +1,142 @@
+/*
+ * Social sharing
+ */
+#social {
+	/*margin-bottom:20px;*/
+	float: right;
+	color: #a8a8a8;
+	font-size: 0.9em;
+	margin-top: -20px;
+	/*margin-right: 100px;*/
+}
+
+@font-face {
+	font-family: 'storymaps-icons';
+	src: url('fonts/storymaps-icons.eot?73880937');
+	src: url('fonts/storymaps-icons.eot?73880937#iefix') format('embedded-opentype'), url('fonts/storymaps-icons.woff?73880937') format('woff'), url('fonts/storymaps-icons.ttf?73880937') format('truetype'), url('fonts/storymaps-icons.svg?73880937#storymaps-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'storymaps-icons';
+    src: url('../font/storymaps-icons.svg?73880937#storymaps-icons') format('svg');
+  }
+}
+*/
+
+[class^="socialIcon"]:before, [class*=" socialIcon-"]:before {
+	font-family: "storymaps-icons";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	/*margin-right: .2em;*/
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	/*margin-left: .2em;*/
+
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.socialIcon-link:before {
+	content: '\e802';
+}
+
+/* '' */
+.socialIcon-twitter-1:before {
+	content: '\e800';
+}
+
+/* '' */
+.socialIcon-facebook-squared-1:before {
+	content: '\e801';
+}
+
+/* '�?' */
+
+.shareIcon {
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 4px;
+	color: #C5D5D5;
+	vertical-align: 0px;
+}
+
+.shareIcon:hover {
+	color: #fff;
+}
+
+.share_bitly {
+	vertical-align: 1px;
+	margin-left: 2px;
+}
+
+.social .popover-title {
+	display: none;
+}
+
+.bitlyInputContainer {
+	width: 150px;
+	height: 30px;
+}
+
+#bitlyInput {
+	width: 150px;
+}
+
+#bitlyInput::-ms-clear {
+	display: none;
+}
+
+.popover {
+	top: 7px;
+	right: 310px;
+	max-width: 180px;
+	left: auto;
+	display: none;
+	margin-top: 5px;
+}
+
+.arrow {
+	top: 50%;
+	right: -11px;
+	margin-top: -11px;
+	border-right-width: 0;
+	border-left-color: #999;
+	border-left-color: rgba(0, 0, 0, 0.25);
+	border-width: 11px;
+	border-bottom: 12px solid transparent;
+	margin-top: -12px;
+	width: 0;
+	border-left: 12px solid #f7f7f7;
+	height: 0;
+	border-top: 12px solid transparent;
+	top: 50%;
+	position: absolute;
+}
+
+.popover-content {
+	padding: 9px 14px;
+}

@@ -1,0 +1,275 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-size: 1.0em;
+}
+
+body {
+	overflow: hidden;
+}
+
+.esriRTL label {
+    /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+.loading-indicator {
+    /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+    /* Show this class when loading or error */
+    display: block;
+}
+.app-loading .loading-indicator {
+    /* Loading image */
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+.app-error .loading-message {
+    /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+
+/* Layout */
+
+
+/* ------ main window ------ */
+#main-window {
+	height: 100%;
+	width: 100%;
+}
+
+/* ------ header/banner ------ */
+.header {
+	height: 70px;
+	margin: 0;
+	overflow: hidden;
+	background-color: #304b3c;
+	/*background: #000 url(img/blue_black.jpg) 178px 0px no-repeat;*/
+}
+
+.header-logo {
+	height: 60px;
+	float: right;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-left: 8px;
+}
+
+.header-title {
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 1.6em;
+	color: white;
+}
+
+.subheader-title {
+	padding-left: 20px;
+	font-size: 0.9em;
+}
+
+/* ------ side bar ------*/
+.sidebar {
+	height: 100% !important;
+	width: 300px;
+	margin: 0;
+	overflow: hidden;
+}
+
+/* ------ map container ------ */
+#mapDiv {
+	margin: 0;
+}
+
+.mapDiv .logo-med {
+	opacity: 0.75 !important;
+}
+
+/* ------ timeline container ------*/
+#timeline-container {
+	height: 0px;
+	margin-left: 300px;
+	overflow: hidden;
+}
+
+/* Message displayed when user is zoomed to far out */
+.timelineDisableMessageContainer {
+	display: none;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	position: absolute;
+	margin: auto;
+	font-size: 1.7em;
+	text-align: center;
+	z-index: 300;
+	vertical-align: middle;
+	display: table-cell;
+	line-height: 200px;
+}
+
+/* timeline legend */
+.timeline-legend-container {
+	float: left;
+	color: #666;
+	width: 200px;
+	padding-left: 5px;
+}
+
+.timeline-legend-header {
+	font-size: 0.85em;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}
+
+.timeline-legend-container > div.btn-group.btn-group-vertical.topo-legend > label > span {
+	font-size: 0.85em !important;
+}
+
+/* timeline */
+#timeline {
+	margin-left: 200px;
+	padding-right: 5px;
+}
+
+.timeline-frame {
+	border: none !important;
+}
+
+.timeline-event-dot {
+	/*border-color: rgb(8, 68, 0) !important;*/
+}
+
+.timeline-event-selected {
+	border-color: #ff0018 !important;
+}
+
+.timeline-navigation {
+	position: absolute;
+	/* right: 10px; */
+	top: 10px;
+	left: 10px;
+	opacity: 0.85;
+	width: 150px;
+}
+
+/* ------ geocoder ------  */
+.esriSimpleSliderTL {
+	top: 10px !important;
+	left: 10px !important;
+}
+
+.simpleGeocoder .esriGeocoder {
+	border: 1px solid #CFCFCF !important;
+	margin-left: 20px;
+}
+
+.simpleGeocoder .esriGeocoderContainer {
+	width: 230px !important;
+}
+
+.simpleGeocoder .esriGeocoderResults {
+	margin-left: 20px;
+	border: 1px solid #CFCFCF !important;
+}
+
+/* ------ MISC ------  */
+.dijitSplitter {
+	margin-left: 300px !important;
+}
+
+.message-container {
+	width: 65%;
+	padding: 1em;
+	margin: auto;
+	font-size: 0.85em;
+}
+
+.halfCircleRight {
+	height: 80px;
+	width: 40px;
+	border-radius: 0 80px 80px 0;
+	-moz-border-radius: 0 80px 80px 0;
+	-webkit-border-radius: 0 80px 80px 0;
+	float: left;
+	font-size: 3.0em;
+	padding-top: 5px;
+	padding-left: 5px;
+	margin-top: 5px;
+}
+
+#loadingImg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 100;
+	opacity: 0.55;
+}
+
+.dijitSliderH {
+	opacity: 0.85;
+}
+
+/* Applied to selected maps in the dGrid that are outside the LOD */
+.outside-lod {
+	opacity: 0.3;
+}
+
+.bitlyInputContainer {
+	width:150px;
+	height:30px;
+}
+
+/* Messages */
+.step-one {
+
+}
+
+.step-one-message {
+
+}
+
+.step-two {
+	position: absolute;
+	bottom: 235px;
+	display: none;
+}
+
+.step-two-message {
+	position: absolute;
+	bottom: 245px;
+	margin-left: 40px;
+	display: none;
+}
+
+.step-three {
+
+}
+
+.step-three-message {
+
+}
