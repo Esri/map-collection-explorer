@@ -32,7 +32,7 @@ A downloadable version of this document can be found <a href="https://raw.github
 <br />
 ###### Application header
 <img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/header.png">
-[here.](header.png)
+(header.png)
 <br />
 <br />
 <br />
