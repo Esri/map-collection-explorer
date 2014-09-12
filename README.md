@@ -7,7 +7,7 @@
 1. Download and unzip the .zip file or clone the repository.
 2. Web-enable the directory.
 3. Access the .html page.
-4. Configure the parameters in the config [file](config/defaults.js).
+4. Configure the parameters in the config [file](config/defaults.js?raw=true).
 
 The configuration options are listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
 <br />
@@ -25,7 +25,7 @@ Another important configuration parameter is the url to the ArcGIS Image Service
 "IMAGE_SERVER": "<image service url>"
 ```
 <br />
-A downloadable version of this document can be found <a href="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/explorer_documentation.pdf?raw=true" target="_blank">here</a>.
+A downloadable version of this document can be found [here](explorer_documentation.pdf?raw=true).
 <br />
 <br />
 ###### Application header
@@ -147,7 +147,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/application-boilerplate-js/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](LICENSE?raw=true) file.
 
 [](Esri Tags: ArcGIS ArcGIS Online Web Application boilerplate template widget dijit Esri JavaScript application)
 [](Esri Language: JavaScript)
