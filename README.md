@@ -29,7 +29,7 @@ A downloadable version of this document can be found <a href="https://raw.github
 <br />
 <br />
 ###### Application header
-<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/header.png">
+<img src="header.png">
 (header.png)
 <br />
 <br />
