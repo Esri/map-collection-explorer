@@ -30,22 +30,21 @@ A downloadable version of this document can be found <a href="https://raw.github
 <br />
 ###### Application header
 <img src="header.png">
-(header.png)
 <br />
 <br />
 <br />
 ###### Application sidebar
-<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/sidebar.png" width="83%">
+<img src="sidebar.png" width="83%">
 <br />
 <br />
 <br />
 ###### Map
-<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/map.png" width="83%">
+<img src="map.png" width="83%">
 <br />
 <br />
 <br />
 ###### Timeline
-<img src="https://raw.githubusercontent.com/ArcGIS/map-collection-explorer/master/timeline.png">
+<img src="timeline.png">
 <br />
 <br />
 <br />
