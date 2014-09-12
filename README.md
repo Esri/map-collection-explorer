@@ -7,9 +7,7 @@
 1. Download and unzip the .zip file or clone the repository.
 2. Web-enable the directory.
 3. Access the .html page.
-4. Configure the parameters in the <a href="https://github.com/ChrisMahlke/explorer/blob/master/config/defaults.js" target="_blank">configuration file</a>.
-
-The configuration file can be found [here](config/defaults.js).
+4. Configure the parameters in the config [file](config/defaults.js).
 
 The configuration options are listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
 <br />
