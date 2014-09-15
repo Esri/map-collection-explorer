@@ -46,6 +46,15 @@ A downloadable version of this document can be found [here](explorer_documentati
 ###### Timeline
 <img src="timeline.png">
 <br />
+```sh
+"TIMELINE_LEGEND_VALUES": [{
+    "label" : <a string representing a single scale in the legend>,
+    "value" : <a integer value representing a single scale>,
+    "color" : <the color used in the legend for a single scale>,
+    "className" : <the CSS style used for a single scale>,
+    "lodThreshold" : <the level of detail for a single scale>
+}]
+```
 <br />
 <br />
 
