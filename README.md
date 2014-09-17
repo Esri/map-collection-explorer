@@ -56,6 +56,15 @@ A downloadable version of this document can be found [here](explorer_documentati
 }]
 ```
 <br />
+
+The string representing the CSS style used for a single scale must be indicated in the time timelineItem.css file:
+```sh
+div.timeline-event-box.five {
+	background-color: #004ED7;
+	color: #f9f9f9;
+}
+```
+<br />
 Sample
 ```sh
 "TIMELINE_LEGEND_VALUES": [{
