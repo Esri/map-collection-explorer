@@ -56,6 +56,17 @@ A downloadable version of this document can be found [here](explorer_documentati
 }]
 ```
 <br />
+Sample
+```sh
+"TIMELINE_LEGEND_VALUES": [{
+    "label" : "250,000",
+    "value" : 250000,
+    "color" : "#004ED7",
+    "className" : "five",
+    "lodThreshold" : 7
+}]
+```
+<br />
 <br />
 
 #### Features
