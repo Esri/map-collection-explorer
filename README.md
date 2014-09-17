@@ -158,5 +158,5 @@ limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](LICENSE?raw=true) file.
 
-[](Esri Tags: ArcGIS ArcGIS Online Web Application boilerplate template widget dijit Esri JavaScript application)
+[](Esri Tags: ArcGIS ArcGIS Online Web Application boilerplate template widget dijit Esri JavaScript application USGS Landsat ArcGIS ImageServer)
 [](Esri Language: JavaScript)
