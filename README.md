@@ -44,6 +44,23 @@ A downloadable version of this document can be found [here](explorer_documentati
 <br />
 <br />
 ###### Timeline
+<br />
+```sh
+"TIMELINE_STYLE": "box",	// Specifies the style for the timeline events. Choose from "dot" or "box".
+"TIMELINE_HEIGHT": "240",	// Timeline height
+"TIMELINE_ZOOM_MIN": 201536000000,	//
+"TIMELINE_ZOOM_MAX": 4153600000000,	//
+"TIMELINE_CLUSTER": false,	// If true, events will be clustered together when zooming out.
+"TIMELINE_SHOW_NAVIGATION": false,	// Enable a navigation menu with buttons to move and zoom the timeline.
+"TIMELINE_MIN_DATE": '1950',	// minimum date onLoad
+"TIMELINE_MAX_DATE": '2015',	// maximum date onLoad
+"TIMELINE_STEP": 5,			// steps between labels
+"TIMELINE_ANIMATE": true,	// When true, events are moved animated when resizing or moving them. This is very pleasing for the eye, but does require more computational power.
+"TIMELINE_SCALE": "year",	// Timeline scale
+```
+<br />
+<br />
+###### Timeline Legend
 <img src="timeline.png">
 <br />
 ```sh
@@ -77,6 +94,7 @@ Sample
 ```
 <br />
 <br />
+
 
 #### Features
 *	Panning and zooming the timeline
