@@ -46,17 +46,28 @@ A downloadable version of this document can be found [here](explorer_documentati
 ###### Timeline
 <br />
 ```sh
-"TIMELINE_STYLE": "box",	// Specifies the style for the timeline events. Choose from "dot" or "box".
-"TIMELINE_HEIGHT": "240",	// Timeline height
-"TIMELINE_ZOOM_MIN": 201536000000,	//
-"TIMELINE_ZOOM_MAX": 4153600000000,	//
-"TIMELINE_CLUSTER": false,	// If true, events will be clustered together when zooming out.
-"TIMELINE_SHOW_NAVIGATION": false,	// Enable a navigation menu with buttons to move and zoom the timeline.
-"TIMELINE_MIN_DATE": '1950',	// minimum date onLoad
-"TIMELINE_MAX_DATE": '2015',	// maximum date onLoad
-"TIMELINE_STEP": 5,			// steps between labels
-"TIMELINE_ANIMATE": true,	// When true, events are moved animated when resizing or moving them. This is very pleasing for the eye, but does require more computational power.
-"TIMELINE_SCALE": "year",	// Timeline scale
+// Specifies the style for the timeline events. Choose from "dot" or "box".
+"TIMELINE_STYLE": "box",
+// Timeline height
+"TIMELINE_HEIGHT": "240",
+// Minimum zoom interval for the visible range (milliseconds). It will not be possible to zoom in further than this minimum.
+"TIMELINE_ZOOM_MIN": 201536000000,
+// Maximum zoom interval for the visible range (milliseconds). It will not be possible to zoom out further than this maximum.
+"TIMELINE_ZOOM_MAX": 4153600000000,
+// If true, events will be clustered together when zooming out.
+"TIMELINE_CLUSTER": false,
+// Enable a navigation menu with buttons to move and zoom the timeline.
+"TIMELINE_SHOW_NAVIGATION": false,
+// Initial visible start date of timeline
+"TIMELINE_MIN_DATE": '1950',
+// Initial visible end date of timeline
+"TIMELINE_MAX_DATE": '2015',
+// steps (number of x-value ticks) between labels
+"TIMELINE_STEP": 5,
+// When true, events are moved/animated when resizing or moving them. This is very pleasing for the eye, but does require more computational power.
+"TIMELINE_ANIMATE": true,
+// Timeline scale (Available scales: millisecond, second, minute, hour, weekday, day, month, year)
+"TIMELINE_SCALE": "year",
 ```
 <br />
 <br />
