@@ -54,7 +54,7 @@ A downloadable version of this document can be found [here](explorer_documentati
 "TIMELINE_ZOOM_MIN": 201536000000,
 // Maximum zoom interval for the visible range (milliseconds). It will not be possible to zoom out further than this maximum.
 "TIMELINE_ZOOM_MAX": 4153600000000,
-// If true, events will be clustered together when zooming out.
+// If true, timeline events will be clustered together when zooming out.
 "TIMELINE_CLUSTER": false,
 // Enable a navigation menu with buttons to move and zoom the timeline.
 "TIMELINE_SHOW_NAVIGATION": false,
