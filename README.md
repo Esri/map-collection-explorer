@@ -46,7 +46,7 @@ A downloadable version of this document can be found [here](explorer_documentati
 ###### Timeline
 <br />
 ```sh
-// Specifies the style for the timeline events. Choose from "dot" or "box".
+// Specifies the style for the timeline events. Choose from "dot" or "box". Values below are used in the USGS application.
 "TIMELINE_STYLE": "box",
 // Timeline height
 "TIMELINE_HEIGHT": "240",
