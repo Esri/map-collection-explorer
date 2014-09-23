@@ -139,7 +139,7 @@ define({
 	 * Geocoder Dijit
 	 *
 	 **************************************************************************/
-	"GEOCODER_PLACEHOLDER_TEXT": "Find a Placeee",
+	"GEOCODER_PLACEHOLDER_TEXT": "Find a Place",
 
 	/**************************************************************************
 	 *
