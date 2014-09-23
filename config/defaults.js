@@ -57,7 +57,8 @@ define({
 
 	/**************************************************************************
 	 *
-	 *
+	 * Text displayed when saving is enabled.  Saving is enabled when users are
+	 * logged into to their ArcGIS Online organization.
 	 *
 	 ***************************************************************************/
 	"SAVE_AS_TEXT": "save",
@@ -143,11 +144,17 @@ define({
 
 	/**************************************************************************
 	 *
-	 * Timeline Container
+	 * Timeline Container - the container that display the timeline
 	 *
 	 **************************************************************************/
 	/* container background color */
 	"TIMELINE_CONTAINER_BACKGROUND_COLOR": "rgba(224, 237, 228, 0.55)",
+
+	/**************************************************************************
+	 *
+	 * Timeline Legend
+	 *
+	 **************************************************************************/
 	/* legend header */
 	"TIMELINE_LEGEND_HEADER": "Historical Map Scales",
 	/*
@@ -238,7 +245,7 @@ define({
 	"IMAGE_SERVER": "http://utility.arcgis.com/usrsvcs/servers/f0ccaa1db1e5457397d22847d66f7de1/rest/services/USA_Historical_Topo_Maps/ImageServer",
 	/* outfields */
 	"OUTFIELDS": ['*'],
-	/* WHERE clause */
+	/* WHERE clause (DO NOT CHANGE) */
 	"IMAGE_SERVER_WHERE": "OBJECTID = ",
 
 	/* URL to the ArcGIS Server REST resource that represents a map service layer. */
@@ -252,8 +259,8 @@ define({
 	"QUERY_GEOMETRY": "MAP_POINT",
 
 	/* USGS (temporary) */
+	/* Used specifically for the USGS application */
 	"DOWNLOAD_PATH": "http://ims.er.usgs.gov/gda_services/download?item_id=",
-
 	/* Attribute Fields */
 	"ATTRIBUTE_OBJECTID": "SvcOID",
 	/* Name of map displayed */
