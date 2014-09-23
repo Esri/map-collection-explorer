@@ -78,7 +78,7 @@ define({
 	/* Header height */
 	"HEADER_HEIGHT": "70px",
 	/* Header/Banner background color (rgb or hex) */
-	"HEADER_BACKGROUND_COLOR": "#304b3c",
+	"HEADER_BACKGROUND_COLOR": "rgb(48, 75, 60)",
 	/* Header text color */
 	"HEADER_TEXT_COLOR": "white",
 	/* Header text size */
@@ -112,7 +112,7 @@ define({
 	"STEP_THREE_MESSAGE": "<span style='font-weight: bold'>Slide</span> transparency on map to compare, or drag/drop to re-order maps.",
 	"STEP_THREE_HALF_CIRCLE_MSG": "3",
 	/* Half circle */
-	"HALF_CIRCLE_BACKGROUND_COLOR": "#92b3a0",
+	"HALF_CIRCLE_BACKGROUND_COLOR": "rgb(146, 179, 160)",
 	"HALF_CIRCLE_COLOR": "white",
 	"HALF_CIRCLE_OPACITY": "1.0",
 
@@ -169,35 +169,35 @@ define({
 		{
 			"label": "250,000",
 			"value": 250000,
-			"color": "#004ED7",
+			"color": "rgb(0, 78, 215)",
 			"className": "five",
 			"lodThreshold": 7
 		},
 		{
 			"label": "125,000",
 			"value": 125000,
-			"color": "#0075C4",
+			"color": "rgb(0, 117, 196)",
 			"className": "four",
 			"lodThreshold": 9
 		},
 		{
 			"label": "62,500",
 			"value": 62500,
-			"color": "#009CB0",
+			"color": "rgb(0, 156, 176)",
 			"className": "three",
 			"lodThreshold": 10
 		},
 		{
 			"label": "24,000",
 			"value": 24000,
-			"color": "#00C49D",
+			"color": "rgb(0, 196, 157)",
 			"className": "two",
 			"lodThreshold": 11
 		},
 		{
 			"label": "12,000",
 			"value": 12000,
-			"color": "#00EB89",
+			"color": "rgb(0, 235, 137)",
 			"className": "one",
 			"lodThreshold": 13
 		}
