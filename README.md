@@ -20,7 +20,7 @@
 <br />
 
 ##### Yosemite National Park Map Collection
-<a href="http://chrismahlke.github.io/historical_map_collection_explorer/" target="_blank">Production</a>
+<a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">Production</a>
 <br />
 
 #### Instructions
