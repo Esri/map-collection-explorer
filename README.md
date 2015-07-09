@@ -1,6 +1,27 @@
-### Map Explorer template
+### Map Collection Explorer template
 
 <a href="http://www.esri.com/esri-news/releases/14-3qtr/new-york-to-la-history-of-americas-maps-in-one-app" target="_blank">Description</a>
+
+#### Features
+*	Panning and zooming the timeline
+*	Filtering maps based on scale
+*	Re-ordering selected maps by drag and drop
+*	Modifying the opacity of a map
+*	Customizing the application's user interface (color, text, etc...)
+*	Using your ArcGIS Online webmap to power the template.
+*	Sharing the application's state with other users
+*	Capturing URL parameters and using them in your application
+*	Enabling your application to sign-in to ArcGIS Online using [OAuth 2.0](http://oauth.net/2/)
+
+#### Demos
+
+##### USGS Historical Topographic Map Explorer
+<a href="http://historicalmaps.arcgis.com/usgs/" target="_blank">Production</a>
+<br />
+
+##### Yosemite National Park Map Collection
+<a href="http://chrismahlke.github.io/historical_map_collection_explorer/" target="_blank">Production</a>
+<br />
 
 #### Instructions
 
@@ -8,6 +29,7 @@
 2. Web-enable the directory.
 3. Access the .html page.
 4. Configure the parameters in the config [file](config/defaults.js?raw=true).
+5. View more detailed configuration instructions [here](explorer_documentation.pdf?raw=true)
 
 The configuration options are listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
 <br />
@@ -106,29 +128,6 @@ Sample
 <br />
 <br />
 
-
-#### Features
-*	Panning and zooming the timeline
-*	Filtering maps based on scale
-*	Re-ordering the selected maps br drag and drop
-*	Modifying the opacity of a map
-*	Customizing the application's user interface (color, text, etc...)
-*	Using your ArcGIS Online webmap to power the template.
-*	Sharing the application's state with other users
-*	Capturing URL parameters and using them in your application.
-*	Enabling your application to sign-in to ArcGIS Online using [OAuth 2.0](http://oauth.net/2/)
-
-#### Demos
-
-##### USGS Historical Topographic Map Explorer
-<a href="http://historicalmaps.arcgis.com/usgs/" target="_blank">Production</a>
-<br />
-##### Landsat 8 Map Explorer
-(Requires an ArcGIS Online organizational account)
-<br />
-<a href="http://chrismahlke.github.io/explorer_landsat/" target="_blank">Development</a>
-<br />
-
 Review the following ArcGIS.com help topics for details on Templates:
 
 *	[Writing your first application](https://developers.arcgis.com/en/javascript/jstutorials/intro_firstmap_amd.html)
@@ -142,41 +141,41 @@ The template consists of the following folders and files:
 
 **/config/:** A folder for your application's configuration files.
 
-*   **defaults.js:** Define the default configuration information for the template. You can use this file to specify things like a default web map id, a proxy url, default services, a Bing maps key, default color theme and other template-specific settings.
+*   **defaults.js:** Define the default configuration information for the template. You can use this file to specify a default web map id, the ArcGIS Image Server REST endpoint URL, and user interface settings, for example.
+*	**config.css** Contains the styles used for items on the timeline.
 
-**/css/:** Contains 8 CSS files for the application and 3 folders.
+**/css/:** Styles.
 
-*	**grid.css** This file contains the table style for selected maps.
-*	**main.css** This file contains the map styles that set the margin, padding and initial height (100%).
-*	**slider.css** This file contains styles that customize the map's zoom slider.
-*	**social.css** This file contains styles for the sharing icons.
-*	**timeline.css** This file contains the timeline styles.
+*	**grid.css** Contains the styles used to display the list of selected historical maps.
+*	**main.css** Map styles that set the margin, padding and initial height (100%).
+*	**slider.css** Styles that customize the map's zoom slider.
+*	**social.css** Styles for the sharing icons.
+*	**timeline.css** Timeline styles.
 *	**timelineItem.css** This file contains the style for a single item in the timeline.
 *	**timelienLegend.css** This file contains the styles for the timeline legend.
 *	**tooltip.css** This file contains the styles related to the timeline item tolltips when hovered.
 
 **/images/**: Contains images used by the application.
 
-**/js/**: Contains 12 JavaScript files and 1 folder:
+**/js/**: JavaScript files:
 
 *   **/nls/:** The nls folder contains a file called resources.js that contains the strings used by the application. If the application needs to be supported by [multiple locales](https://developers.arcgis.com/en/javascript/jshelp/localization.html) you can create a folder for each locale and inside that folder add a resources.js file with the translated strings. See the resources.js file in the nls/fr folder for an example of this in French.
-*	**gridUtils.js:** Methods related to the table of selected maps
-*   **main.js:** Creates the map based on configuration info. You will write all your main application logic in here.
-*	**mapUtils.js:** Map utility methods
-*   **OAuthHelper.js:** Allows your template to [authenticate](https://developers.arcgis.com/en/authentication/) to secured or private ArcGIS Online content and items via [OAuth 2.0](http://oauth.net/2/). You most likely will not need to modify this file.
-*	**sharingUtils.js:** Sharing utility methods
-*   **template.js:** Module that takes care of "template"-specific work like retrieving the application configuration settings by appid, getting the url parameters (web map id and appid), handling localization details and retrieving organization specific info if applicable. You will most likely not need to modify this file. Also sets the [proxy](https://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html) and geometry service if the url's have been provided in the defaults.js file or are available from the org. Once executed you'll have access to an object that contains properties that give you access to the following:
+*	gridUtils.js
+*	mapUtils.js
+*	sharingUtils.js
+*	timelineLegendUtils.js
+*	tmin.js
+*	tooltip-min.js
+*	ui.js
+*   main.js: Creates the map based on configuration info. You will write all your main application logic in here.
+*   oAuthHelper.js: Allows your template to [authenticate](https://developers.arcgis.com/en/authentication/) to secured or private ArcGIS Online content and items via [OAuth 2.0](http://oauth.net/2/). You most likely will not need to modify this file.
+*   template.js: Module that takes care of "template"-specific work like retrieving the application configuration settings by appid, getting the url parameters (web map id and appid), handling localization details and retrieving organization specific info if applicable. You will most likely not need to modify this file. Also sets the [proxy](https://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html) and geometry service if the url's have been provided in the defaults.js file or are available from the org. Once executed you'll have access to an object that contains properties that give you access to the following:
     *   Template specific properties
     *   appid
     *   webmap
     *   helperServices: geometry, print, locator service urls
     *   i18n: Strings and isRightToLeft property that can be used to determine if the application is being viewed from a language where text is read left-to-right like Hebrew or Arabic.
     *   proxy  url
-*	**timelineLegendUtils.js:** Timeline legend utility methods
-*	**timelineUtils.js:** Timeline utility methods
-*	**tmin.js:**
-*	**tooltip-min.js:** Timeline Item tooltip methods
-*	**uiUtils.js:** User interface utility methods
 
 **index.html**: The default html file for the application.
 
