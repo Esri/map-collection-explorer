@@ -29,48 +29,79 @@
 2. Web-enable the directory.
 3. Access the .html page.
 4. Configure the parameters in the config [file](config/defaults.js?raw=true).
-5. View more detailed configuration instructions [here](explorer_documentation.pdf?raw=true)
+5. View additional configuration instructions [here](explorer_documentation.pdf?raw=true)
 
-The configuration options are listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
+To get started, there are several configuration options listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
 <br />
-<br />
-For example, to change the header title and color:
+For example, to change the application's header text, header height, and header background color:
 <br />
 ```sh
-"APP_HEADER_TEXT" : "This is my title",
-"APP_HEADER_TEXT_COLOR" : "#CCC"
+"APP_TITLE": "Yosemite National Park Service"
+// Header height
+"HEADER_HEIGHT": "70px"
+// Header/Banner background color (rgb or hex)
+"HEADER_BACKGROUND_COLOR": "#333"
 ```
 <br />
-Another important configuration parameter is the url to the ArcGIS Image Service:
+Here are some additional application configuration parameters related to setting up queries:
 <br />
 ```sh
+// Enter a valid Image Service URL to an ArcGIS REST Services Directory
 "IMAGE_SERVER": "<image service url>"
+// Enter a relative path to thumbnails on Image Service (this will be a child resource to the Image Service you listed above
+"INFO_THUMBNAIL": "/info/thumbnail"
+// outfields (return all the fields for now)
+"OUTFIELDS": ['*']
+// The OBJECTID is used in the query
+"IMAGE_SERVER_WHERE": "OBJECTID = "
+// Enter the URL to the ArcGIS Server REST resource that represents a feature or map service layer.
+"QUERY_TASK_URL": <feature service url>
+// outfields (return all the fields for now)
+"QUERY_TASK_OUTFIELDS": ["*"]
+// A where clause for the query.
+"QUERY_WHERE": "1 = 1"
+// The geometry to apply to the spatial filter. (<MAP_POINT> or < >)
+"QUERY_GEOMETRY": ""
+// Indicate the URL where individual maps can be downloaded
+"DOWNLOAD_PATH": "http://ims.er.usgs.gov/gda_services/download?item_id="
 ```
 <br />
 A downloadable version of this document can be found [here](explorer_documentation.pdf?raw=true).
 <br />
 <br />
-###### Application header
-<img src="header.png">
+###### Application header and sidebar
+You can style the application's header, text, and styles under the section "User Interface styles can be set below this point" in the config [file](config/defaults.js?raw=true)
+Below are some of the parameters used to style the application's header and "Step 1" text.
+<img src="step-1.png">
 <br />
 <br />
 <br />
-###### Application sidebar
-<img src="sidebar.png" width="83%">
-<br />
-<br />
-<br />
-###### Map
+###### Map crosshair and mouse over/out style
+These parameters style the crosshair and polygons displayed on a map when a user either selects a point on the map or hovers the mouse over an item in the timeline.
 <img src="map.png" width="83%">
-<br />
+```sh
+// Crosshair style
+"CROSSHAIR_SIZE": 40,
+"CROSSHAIR_FILL_COLOR": [255, 0, 24]
+"CROSSHAIR_OPACITY": 0.95
+// Timeline item mouseover graphics
+"TIMELINE_ITEM_MOUSEOVER_GR_FILL": [146, 179, 160, 0.10]
+"TIMELINE_ITEM_MOUSEOVER_GR_BORDER": [48, 75, 60, 1.0]
+// Sidebar item mouseover graphics
+"SIDEBAR_MAP_MOUSEOVER_GR_FILL": [146, 179, 160, 0.0]
+"SIDEBAR_MAP_MOUSEOVER_GR_BORDER": [48, 75, 60, 1.75]
+"IMAGE_BORDER_WIDTH": 1.75
+```
 <br />
 <br />
 ###### Timeline
+Timeline parameters control the timeline container and the timeline.  For instance, indicating initial height of the timeline, and the start and end dates of the timeline.
+<img src="timeline-container.png">
 <br />
 ```sh
-// Specifies the style for the timeline events. Choose from "dot" or "box". Values below are used in the USGS application.
+// Specifies the style for the timeline events. Choose from "dot" or "box". Values below are used in the demo applications.
 "TIMELINE_STYLE": "box",
-// Timeline height
+// Timeline height (in pixels)
 "TIMELINE_HEIGHT": "240",
 // Minimum zoom interval for the visible range (milliseconds). It will not be possible to zoom in further than this minimum.
 "TIMELINE_ZOOM_MIN": 201536000000,
@@ -80,9 +111,9 @@ A downloadable version of this document can be found [here](explorer_documentati
 "TIMELINE_CLUSTER": false,
 // Enable a navigation menu with buttons to move and zoom the timeline.
 "TIMELINE_SHOW_NAVIGATION": false,
-// Initial visible start date of timeline
+// Set a minimum Date for the visible range. It will not be possible for the user to drag the timeline beyond this minimum
 "TIMELINE_MIN_DATE": '1950',
-// Initial visible end date of timeline
+// Set a maximum Date for the visible range. It will not be possible to move beyond this maximum.
 "TIMELINE_MAX_DATE": '2015',
 // steps (number of x-value ticks) between labels
 "TIMELINE_STEP": 5,
@@ -94,7 +125,8 @@ A downloadable version of this document can be found [here](explorer_documentati
 <br />
 <br />
 ###### Timeline Legend
-<img src="timeline.png">
+The timeline legend is displays the different map scales for your maps.  The legend is interactive.  Users can filter items in the legend by selecting one or more items in the legend to hide.
+<img src="timeline-legend.png">
 <br />
 ```sh
 "TIMELINE_LEGEND_VALUES": [{
@@ -106,7 +138,6 @@ A downloadable version of this document can be found [here](explorer_documentati
 }]
 ```
 <br />
-
 The string representing the CSS style used for a single scale must be indicated in the time timelineItem.css file:
 ```sh
 div.timeline-event-box.five {
@@ -115,15 +146,23 @@ div.timeline-event-box.five {
 }
 ```
 <br />
-Sample
+<br />
+###### Timeline item/map tooltip
+Tooltips are displayed when users hover over a single item in the timeline.  The tooltip can display the map's title, thumbnail, date, and any additinal content.
+<img src="item-tooltip.png">
+<br />
+Below are the field names used in the <a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">demo</a> Yosemite.
 ```sh
-"TIMELINE_LEGEND_VALUES": [{
-    "label" : "250,000",
-    "value" : 250000,
-    "color" : "#004ED7",
-    "className" : "five",
-    "lodThreshold" : 7
-}]
+// THESE MUST MATCH the attribute field names in the feature/map service attribute table
+"ATTRIBUTE_OBJECTID": "OBJECTID"
+// Name of map displayed in the tooltip and timeline item(s)
+"ATTRIBUTE_MAP_NAME": "Name_on_Map"
+// Date field
+"ATTRIBUTE_DATE": "Year_on_Map"
+// Scale field
+"ATTRIBUTE_SCALE": "Map_Scale"
+// Map citation <String> or <attribute field in the feature service>
+"ATTRIBUTE_CITATION": "No citation available"
 ```
 <br />
 <br />
