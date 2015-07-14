@@ -48,13 +48,15 @@ Here are some additional application configuration parameters related to setting
 ```sh
 // Enter a valid Image Service URL to an ArcGIS REST Services Directory
 "IMAGE_SERVER": "<image service url>"
-// Enter a relative path to thumbnails on Image Service (this will be a child resource to the Image Service you listed above
+// Enter a relative path to thumbnails on Image Service (this will be a child resource to the 
+// Image Service you listed above
 "INFO_THUMBNAIL": "/info/thumbnail"
 // outfields (return all the fields for now)
 "OUTFIELDS": ['*']
 // The OBJECTID is used in the query
 "IMAGE_SERVER_WHERE": "OBJECTID = "
-// Enter the URL to the ArcGIS Server REST resource that represents a feature or map service layer.
+// Enter the URL to the ArcGIS Server REST resource that represents a feature or map service 
+// layer.
 "QUERY_TASK_URL": <feature service url>
 // outfields (return all the fields for now)
 "QUERY_TASK_OUTFIELDS": ["*"]
