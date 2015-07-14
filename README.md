@@ -129,8 +129,10 @@ Timeline parameters control the timeline container and the timeline.  For instan
 <br />
 <br />
 ###### Timeline Legend
-The timeline legend is displays the different map scales for your maps.  The legend is interactive.  Users can filter items in the legend by selecting one or more items in the legend to hide.
+The timeline legend displays the different map scales for your maps.  The legend is interactive.  Users can filter items in the legend by selecting one or more items in the legend to hide.
 <img src="timeline-legend.png">
+<br />
+Below are the properties for a single scale.  The USGS demo uses 5 scales and the Yosemite demo uses 3 scales.
 <br />
 ```sh
 "TIMELINE_LEGEND_VALUES": [{
@@ -142,7 +144,7 @@ The timeline legend is displays the different map scales for your maps.  The leg
 }]
 ```
 <br />
-The string representing the CSS style used for a single scale must be indicated in the time timelineItem.css file:
+The string representing the CSS style used for a single scale must be indicated in the timelineItem.css file:
 ```sh
 div.timeline-event-box.five {
 	background-color: #004ED7;
@@ -152,10 +154,10 @@ div.timeline-event-box.five {
 <br />
 <br />
 ###### Timeline item/map tooltip
-Tooltips are displayed when users hover over a single item in the timeline.  The tooltip can display the map's title, thumbnail, date, and any additinal content.
+Tooltips are displayed when users hover over a single item in the timeline.  The tooltip can display the map's title, thumbnail, date, and any additional content.
 <img src="item-tooltip.png">
 <br />
-Below are the field names used in the <a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">demo</a> Yosemite.
+Below are the field names used in the Yosemite <a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">demo</a> application.
 ```sh
 // THESE MUST MATCH the attribute field names in the feature/map service attribute table
 "ATTRIBUTE_OBJECTID": "OBJECTID"
