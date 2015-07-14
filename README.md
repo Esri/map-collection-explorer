@@ -27,7 +27,7 @@
 
 1. Download and unzip the <a href="https://github.com/Esri/map-collection-explorer/archive/master.zip" target="_blank">*.zip </a> file or clone the repository.
 2. Web-enable the directory.
-3. Access the .html page.
+3. Access the index.html page.
 4. Configure the parameters in the config [file](config/defaults.js?raw=true).
 5. View additional configuration instructions [here](explorer_documentation.pdf?raw=true)
 
