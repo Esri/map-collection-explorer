@@ -63,6 +63,8 @@ Here are some additional application configuration parameters related to setting
 // The geometry to apply to the spatial filter. (<MAP_POINT> or < >)
 "QUERY_GEOMETRY": ""
 // Indicate the URL where individual maps can be downloaded
+// For instance, the path provided by the USGS to download maps from the USGS application would be:
+// "http://ims.er.usgs.gov/gda_services/download?item_id="
 "DOWNLOAD_PATH": "http://ims.er.usgs.gov/gda_services/download?item_id="
 ```
 <br />
