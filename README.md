@@ -57,37 +57,30 @@ Parameter: APP_TITLE; Example value: “USGS Historical Topographic Map Explorer
 You can change the appearance of the application's header by modifying parameters associated with the color, text, and size of this component.
 <br />
 ###### Parameter: "HEADER_HEIGHT"
-<br />Example value: "70px" – this is the height of the header box.
+Example value: "70px" – this is the height of the header box.
 <br />
 ###### Parameter: "HEADER_BACKGROUND_COLOR"
-<br />Example value: "rgb(48, 75, 60)" or “hex() – this is the definition of the color inside the header box. It can be specified as either a Red, Green Blue (r,g,b) or hexidecimal (hex) color.
+Example value: "rgb(48, 75, 60)" or “hex() – this is the definition of the color inside the header box. It can be specified as either a Red, Green Blue (r,g,b) or hexidecimal (hex) color.
 <br />
 ###### Parameter: "HEADER_TEXT_COLOR"
-<br />
 Example value: "white" – this is the color of the header text inside the header box. It should be specified HOW????
 <br />
 ###### Parameter: "HEADER_TEXT_SIZE"
-<br />
 Example value: "1.6em" – this is the size of the header text in the header box. It should be specified in em size units, which is recommended by the W3C. The em text size can be converted from pixels using this formula: pixels/16=em . So, the default text size of browsers of 16 pixels is 1em.
 <br />
 ###### Parameter: "HEADER_TEXT"
-<br />
 Example value: "USGS Historical Topographic Map Explorer" – this is the text string for the header in the header box.
 <br />
 ###### Parameter: "SUBHEADER_TEXT_COLOR"
-<br />
 Example value: "white" – this is the color of the subheader text inside the header box. It should be specified HOW????
 <br />
 ###### Parameter: "SUBHEADER_TEXT_SIZE"
-<br />
 Example value: "0.9em" – this is the size of the subheader text in the header box
-<br />
 <br />
 <br />
 Additionally, you can configure parameters related to setting up queries, which are used to find the scanned map images that the user is interested in seeing:
 <br />
 For example:
-<br />
 ```sh
 // Enter a valid Image Service URL to an ArcGIS REST Services Directory
 "IMAGE_SERVER": "<image service url>"
