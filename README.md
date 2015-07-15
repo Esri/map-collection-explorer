@@ -7,34 +7,37 @@
 *	Filtering maps based on scale
 *	Re-ordering selected maps by drag and drop
 *	Modifying the opacity of a map
-*	Customizing the application's user interface (color, text, etc...)
-*	Using your ArcGIS Online webmap to power the template.
-*	Sharing the application's state with other users
-*	Capturing URL parameters and using them in your application
-*	Enabling your application to sign-in to ArcGIS Online using [OAuth 2.0](http://oauth.net/2/)
+*	Customizing the application's user interface (for example, colors and text)
+*	Using your ArcGIS Online webmap in the template.
+*	Sharing the application's state (that is, the current view) with other users
+*	Capturing the URL parameters and using them in your application
+*	Enabling your application to sign in to ArcGIS Online using [OAuth 2.0](http://oauth.net/2/)
 
 #### Demos
 
 ##### USGS Historical Topographic Map Explorer
-<a href="http://historicalmaps.arcgis.com/usgs/" target="_blank">Production</a>
+<a href="http://historicalmaps.arcgis.com/usgs/" target="_blank">Demo</a>
 <br />
 
 ##### Yosemite National Park Map Collection
-<a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">Production</a>
+<a href="http://chrismahlke.github.io/map-collection-explorer/" target="_blank">Demo</a>
 <br />
 
 #### Instructions
 
-1. Download and unzip the <a href="https://github.com/Esri/map-collection-explorer/archive/master.zip" target="_blank">*.zip </a> file or clone the repository.
+1. Download and unzip the <a href="https://github.com/Esri/map-collection-explorer/archive/master.zip" target="_blank">*.zip </a> file or clone the repository into a folder on a web server.
 2. Web-enable the directory.
-3. Access the index.html page.
-4. Configure the parameters in the config [file](config/defaults.js?raw=true).
-5. View additional configuration instructions [here](explorer_documentation.pdf?raw=true)
+3. In the config folder, open the defaults.js file in a text editor.
+4. Edit the defaults.js file to include information about your image service and index map feature service, as described below.
+4. View the changes by opening the index.html file in a web browser.
 
-To get started, there are several configuration options listed below for each component of the application (header, sidebar, map, timeline). The parameter name is in quotations and the parameter's argument is in brackets.
 <br />
-For example, to change the application's header text, header height, and header background color:
+
+You can configure the appearance of many of the application’s components (for example, the title, header, sidebar, map, and timeline).
 <br />
+The names of the components (that is, parameters) are in quotations and the parameter values are in brackets. Comments are preceded by a forward slash (/). To change the appearance of a component, edit the parameter value.
+For example, to change the application's title, header height, and header background color, you would change the APP_TITLE, HEADER_HEIGHT, AND HEADER_BACKGROUND_COLOR parameters shown below.
+
 ```sh
 "APP_TITLE": "Yosemite National Park Service"
 // Header height
@@ -43,7 +46,9 @@ For example, to change the application's header text, header height, and header 
 "HEADER_BACKGROUND_COLOR": "#333"
 ```
 <br />
-Here are some additional application configuration parameters related to setting up queries:
+Additionally, you can configure parameters related to setting up queries, which are used to find the scanned map images that the user is interested in seeing:
+<br />
+For example:
 <br />
 ```sh
 // Enter a valid Image Service URL to an ArcGIS REST Services Directory
@@ -70,7 +75,6 @@ Here are some additional application configuration parameters related to setting
 "DOWNLOAD_PATH": "http://ims.er.usgs.gov/gda_services/download?item_id="
 ```
 <br />
-A downloadable version of this document can be found [here](explorer_documentation.pdf?raw=true).
 <br />
 <br />
 ###### Application header and sidebar
