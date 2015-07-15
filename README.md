@@ -32,7 +32,6 @@
 4. View the changes by opening the index.html file in a web browser.
 
 <br />
-
 You can configure the appearance of many of the application’s components (for example, the title, header, sidebar, map, and timeline).
 <br />
 The names of the components (that is, parameters) are in quotations and the parameter values are in brackets. Comments are preceded by a forward slash (/). To change the appearance of a component, edit the parameter value.
@@ -45,6 +44,25 @@ For example, to change the application's title, header height, and header backgr
 // Header/Banner background color (rgb or hex)
 "HEADER_BACKGROUND_COLOR": "#333"
 ```
+<br />
+##### Component: Save as text
+This parameter is the text that is displayed with the ability to save the current view (that is, state of the app) is enabled. Saving is automatically enabled when users are logged into their ArcGIS Online organization account.Parameter: SAVE_AS_TEXT; Example value: “save”
+Parameter: APP_TITLE
+<br />
+##### Component: Application title
+This is the text that is displayed at the top of the application window.
+Parameter: APP_TITLE; Example value: “USGS Historical Topographic Map Explorer”
+<br />
+##### Component: Application header
+You can change the appearance of the application's header by modifying parameters associated with the color, text, and size of this component.
+Parameter: "HEADER_HEIGHT"; Example value: "70px" – this is the height of the header box.
+Parameter: "HEADER_BACKGROUND_COLOR"; Example value: "rgb(48, 75, 60)" or “hex() – this is the definition of the color inside the header box. It can be specified as either a Red, Green Blue (r,g,b) or hexidecimal (hex) color.
+Parameter: "HEADER_TEXT_COLOR"; Example value: "white" – this is the color of the header text inside the header box. It should be specified HOW????
+Parameter: "HEADER_TEXT_SIZE"; Example value: "1.6em" – this is the size of the header text in the header box. It should be specified in em size units, which is recommended by the W3C. The em text size can be converted from pixels using this formula: pixels/16=em . So, the default text size of browsers of 16 pixels is 1em.
+Parameter: "HEADER_TEXT"; Example value: "USGS Historical Topographic Map Explorer" – this is the text string for the header in the header box.
+Parameter: "SUBHEADER_TEXT_COLOR"; Example value: "white" – this is the color of the subheader text inside the header box. It should be specified HOW????
+Parameter: "SUBHEADER_TEXT_SIZE"; Example value: "0.9em" – this is the size of the subheader text in the header box
+<br />
 <br />
 Additionally, you can configure parameters related to setting up queries, which are used to find the scanned map images that the user is interested in seeing:
 <br />
