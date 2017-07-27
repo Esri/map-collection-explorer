@@ -260,7 +260,7 @@ define({
 
 	/* USGS (temporary) */
 	/* Used specifically for the USGS application */
-	"DOWNLOAD_PATH": "http://ims.er.usgs.gov/gda_services/download?item_id=",
+	"DOWNLOAD_PATH": "https://ims.er.usgs.gov/gda_services/download?item_id=",
 	/* Attribute Fields */
 	"ATTRIBUTE_OBJECTID": "SvcOID",
 	/* Name of map displayed */
