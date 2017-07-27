@@ -242,7 +242,8 @@ define({
 	/* path to thumbnails on Image Service */
 	"INFO_THUMBNAIL": "/info/thumbnail",
 	/* Image service */
-	"IMAGE_SERVER": "https://utility.arcgis.com/usrsvcs/servers/f0ccaa1db1e5457397d22847d66f7de1/rest/services/USA_Historical_Topo_Maps/ImageServer",
+	"IMAGE_SERVER": "https://utility.arcgis.com/usrsvcs/servers/2b0399da54ca45b1a36825af098d7676/rest/services/USA_Historical_Topo_Maps/ImageServer",
+	//"IMAGE_SERVER": "https://utility.arcgis.com/usrsvcs/servers/f0ccaa1db1e5457397d22847d66f7de1/rest/services/USA_Historical_Topo_Maps/ImageServer",
 	/* outfields */
 	"OUTFIELDS": ['*'],
 	/* WHERE clause (DO NOT CHANGE) */
