@@ -242,14 +242,14 @@ define({
 	/* path to thumbnails on Image Service */
 	"INFO_THUMBNAIL": "/info/thumbnail",
 	/* Image service */
-	"IMAGE_SERVER": "http://utility.arcgis.com/usrsvcs/servers/f0ccaa1db1e5457397d22847d66f7de1/rest/services/USA_Historical_Topo_Maps/ImageServer",
+	"IMAGE_SERVER": "https://utility.arcgis.com/usrsvcs/servers/f0ccaa1db1e5457397d22847d66f7de1/rest/services/USA_Historical_Topo_Maps/ImageServer",
 	/* outfields */
 	"OUTFIELDS": ['*'],
 	/* WHERE clause (DO NOT CHANGE) */
 	"IMAGE_SERVER_WHERE": "OBJECTID = ",
 
 	/* URL to the ArcGIS Server REST resource that represents a map service layer. */
-	"QUERY_TASK_URL": "http://services.arcgis.com/YkVYBaX0zm7bsV3k/ArcGIS/rest/services/USGSTopoIndex/FeatureServer/0",
+	"QUERY_TASK_URL": "https://services.arcgis.com/YkVYBaX0zm7bsV3k/ArcGIS/rest/services/USGSTopoIndex/FeatureServer/0",
 	/* */
 	"QUERY_TASK_OUTFIELDS": ["Download_G", "Map_Name", "Map_Scale", "DateCurren", "SvcOID", "IsDefault", "Citation"],
 	/* A where clause for the query. */
