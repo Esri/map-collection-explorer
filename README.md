@@ -222,7 +222,6 @@ The template consists of the following folders and files:
 **/config/:** A folder for your application's configuration files.
 
 *   **defaults.js:** Define the default configuration information for the template. You can use this file to specify a default web map id, the ArcGIS Image Server REST endpoint URL, and user interface settings, for example.
-*	**config.css** Contains the styles used for items on the timeline.
 
 **/css/:** Styles.
 
