@@ -98,8 +98,8 @@ define([
 		},
 
 		runQuery:function (mapExtent, mp) {
-			var qt = new QueryTask(this.config.QUERY_TASK_URL),
-					q = new Query();
+			var qt = new QueryTask(this.config.QUERY_TASK_URL);
+			var q = new Query();
 			q.returnGeometry = true;
 			q.outFields = this.config.QUERY_TASK_OUTFIELDS;
 			q.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
@@ -528,6 +528,7 @@ define([
 			} else {
 				thumbnailUrl = this.config.IMAGE_SERVER + "/" + objID + this.config.INFO_THUMBNAIL;
 			}
+			console.debug(thumbnailUrl);
 			return thumbnailUrl;
 		}
 	});
