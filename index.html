@@ -1,155 +1,207 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
-		<meta charset="utf-8">
-		<!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- Responsive -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		<!-- End Responsive -->
-		<!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-		<link rel="stylesheet" href="//js.arcgis.com/3.10/js/dojo/dijit/themes/nihilo/nihilo.css">
-		<link rel="stylesheet" href="//js.arcgis.com/3.10/js/esri/css/esri.css">
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-		<!-- Load any application specific styles -->
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/slider.css">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <meta property="og:url"                content="https://livingatlas.arcgis.com/topoexplorer/index.html" />
+    <meta property="og:type"               content="application" />
+    <meta property="og:title"              content="Esri Topo Explorer" />
+    <meta property="og:description"        content="The USGS Historical Topographic Map Explorer brings the rich tapestry of US historical maps to everyone, and it allows them to share views of the collection as a web maps." />
+    <meta property="og:image"              content="https://images.safe.com/logos/partners/esri.png" />
+    <!-- SEO -->
+    <meta name="Keywords" content="USGS, Topographic Maps, Historical Maps, Map, Esri"/>
+    <meta name="Description" content="This interactive map..."/>
 
-		<link rel="stylesheet" type="text/css" href="css/tooltip.css"/>
-		<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-shadow.css"/>
-		<link rel="stylesheet" type="text/css" href="css/slider.css"/>
-		<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
-		<link rel="stylesheet" type="text/css" href="css/timelineItem.css"/>
-		<link rel="stylesheet" type="text/css" href="css/grid.css"/>
-		<link rel="stylesheet" type="text/css" href="css/social.css"/>
-		<link rel="stylesheet" type="text/css" href="css/timelineLegend.css"/>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,700' rel='stylesheet' type='text/css'>
-	</head>
+    <link rel="icon" href="https://www.esri.com/favicon.ico">
 
-	<body class="nihilo app-loading">
-		<div class="loading-indicator">
-			<div class="loading-message" id="loading_message"></div>
-		</div>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-shadow.css"/>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.27/esri/css/esri.css"/>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.27/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.4/css/calcite-web.min.css">
+</head>
 
-		<!-- main window -->
-		<div id="main-window" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', liveSplitters:true, gutters:false">
-			<!-- header -->
-			<div class="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
-				<a href="" target="_blank">
-					<img id="esri-logo" class="header-logo">
-				</a>
-				<a href="" target="_blank">
-					<img id="non-esri-logo" class="header-logo">
-				</a>
-				<div class="header-title"></div>
-				<div class="subheader-title"></div>
+<body class="nihilo">
+<!-- main window -->
+<div id="main-window" data-dojo-type="dijit.layout.BorderContainer"
+     data-dojo-props="design:'headline', liveSplitters:true, gutters:false">
 
-				<div id="social">
-					<i class="shareIcon share_facebook socialIcon-facebook-squared-1"></i>
-					<i class="socialIcon-twitter-1 shareIcon share_twitter"></i>
-					<i class="socialIcon-link shareIcon share_bitly" id="bitlyIcon" title="Get a short link to the application"></i>
+    <!-- header -->
+    <div class="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+        <a href="http://www.esri.com/" target="_blank">
+            <img class="header-logo" src="images/esri.png">
+        </a>
+        <a href="http://www.usgs.gov/" target="_blank">
+            <img class="header-logo" src="images/usgswhite.green.jpg">
+        </a>
+        <div class="header-title"></div>
+        <div class="subheader-title"></div>
 
-					<div class="popover fade left in" data-toggle="popover" data-placement="left">
-						<div class="arrow"></div>
-						<div class="popover-content" id="bitlyContent">
-							<div class="bitlyInputContainer">
-								<input id="bitlyInput" type="text" value="">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div class="right social">
+            <span class="share_facebook icon-social-facebook"></span>
+            <span class="share_twitter icon-social-twitter"></span>
+            <span class="share_bitly icon-social-share" id="bitlyIcon" title="Get a short link to the application"></span>
+            <span class="padding-left-quarter padding-right-0 padding-leader-0 padding-trailer-0 btn btn-small btn-transparent icon-ui-gray about-modal icon-ui-description font-size-1"></span>
 
-			<!-- sidebar container -->
-			<div class="sidebar" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'left'">
-				<!-- STEP ONE -->
-				<div class="halfCircleRight step-one step-one-half-circle-msg"></div>
-				<div class="message-container step-one-message"></div>
-				<div id="geocoder"></div>
-				<!-- STEP TWO -->
-				<div class="halfCircleRight step-two step-two-half-circle-msg"></div>
-				<div class="message-container step-two-message"></div>
-				<!-- GRID CONTAINER / STEP THREE / GRID -->
-				<div class="gridContainer">
-					<div class="halfCircleRight step-three step-three-half-circle-msg"></div>
-					<div class="message-container step-three-message"></div>
-					<div id="grid"></div>
-				</div>
-			</div>
+            <div class="popover fade left in" data-toggle="popover" data-placement="left">
+                <div class="arrow"></div>
+                <div class="popover-content" id="bitlyContent">
+                    <div class="bitlyInputContainer">
+                        <input id="bitlyInput" class="bitlyInput" type="text" value="">
+                    </div>
+                    <div class="copy-btn icon-ui-link btn btn-small btn-white btn-clear">Copy</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<!-- map container -->
-			<div id="mapDiv" dir="ltr" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center', splitter:true">
-				<img id="loadingImg" src="images/loading.gif"/>
-			</div>
+    <!-- sidebar container -->
+    <div class="sidebar" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'left'">
+        <!-- STEP ONE -->
+        <div class="step-one-message-container">
+            <div class="halfCircleRight stepOne step-one-half-circle-msg"></div>
+            <div class="step-one-message"></div>
+        </div>
 
-			<!-- timeline container -->
-			<div id="timeline-container" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom', splitter:true">
-				<!-- timeline legend -->
-				<div class="timeline-legend-container">
-					<div class="timeline-legend-header"></div>
-					<div class="btn-group btn-group-vertical topo-legend" data-toggle="buttons"></div>
-				</div>
-				<!-- timeline -->
-				<div id="timeline"></div>
-			</div>
-		</div>
+        <div class="geocoder-container">
+            <div id="geocoder"></div>
+        </div>
 
-		<script type="text/javascript">
-			var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-			var dojoConfig = {
-				async: true,
-				// The locationPath logic below may look confusing but all its doing is
-				// enabling us to load the api from a CDN and load local modules from the correct location.
-				packages: [{
-					name: "application",
-					location: package_path + '/js'
-				}, {
-					name: "config",
-					location: package_path + '/config'
-				}, {
-					name: "arcgis_templates",
-					location: package_path + '/..'
-				}]
-			};
-		</script>
+        <!-- STEP TWO -->
+        <div class="step-two-message-container hide">
+            <div class="halfCircleRight stepTwo step-two-half-circle-msg"></div>
+            <div class="step-two-message"></div>
+        </div>
 
-		<script type="text/javascript" src="//js.arcgis.com/3.10/"></script>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script src="js/tooltip-min.js"></script>
-		<script src="js/tmin.js"></script>
+        <!-- STEP THREE -->
+        <div class="step-three-message-container hide">
+            <div class="halfCircleRight stepThree step-three-half-circle-msg"></div>
+            <!-- STEP THREE -->
+            <div class="step-three-message"></div>
+        </div>
 
-		<script type="text/javascript">
-			require([
-				"application/templateOptions",
-				"application/template",
-				"application/main",
-				"dijit/layout/BorderContainer",
-				"dijit/layout/ContentPane",
-				"dojo/parser"
-			], function (templateConfig, Template, Main, BorderContainer, ContentPane, parser) {
-				parser.parse();
-				// create the template. This will take care of all the logic required for template applications
-				var myTemplate = new Template(templateConfig);
-				// create my main application. Start placing your logic in the main.js file.
-				var myApp = new Main();
-				// start template
-				myTemplate.startup().then(function (config) {
-					// The config object contains the following properties: helper services, (optionally)
-					// i18n, appid, webmap and any custom values defined by the application.
-					// In this example we have one called theme.
-					myApp.startup(config);
-				}, function (error) {
-					// something went wrong. Let's report it.
-					myApp.reportError(error);
-				});
-			});
-		</script>
-	</body>
+        <!-- sign in / sign out -->
+        <div class="step-four-message-container hide">
+            <div class="step-four-message">
+                <div class="font-size--2 sign-in-message text-center hide">
+                    <div class="save-maps-container">
+                        <span class='sign-in-btn avenir-demi btn btn-transparent padding-leader-0 padding-trailer-0 padding-left-0 padding-right-0'>Sign in</span>
+                        <span> to save web maps to your ArcGIS Online account</span>
+                    </div>
+                </div>
+                <div class="font-size--2 save-maps-message hide">
+                    <div class="save-maps-container">
+                        <div class="left-col">
+                            <img class="user-thumbnail" src="images/profile-pictures.png">
+                            <div class="user-name text-ellipsis"></div>
+                        </div>
+                        <div class="right-col">
+                            <span class='save-maps-btn avenir-demi btn btn-transparent padding-leader-0 padding-trailer-0 padding-left-0 padding-right-0'>Save</span>
+                            <span> web map to your ArcGIS Online account</span>
+                            <div class="sign-out-btn">Sign Out</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRID CONTAINER / STEP THREE / GRID -->
+        <div class="gridContainer">
+            <div id="grid"></div>
+        </div>
+
+        <div class="reset-btn btn btn-small btn-white icon-ui-refresh">Reset</div>
+    </div>
+
+    <!-- map container -->
+    <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center', splitter:true">
+        <img id="loadingImg" src="images/loading.gif"/>
+    </div>
+
+    <!-- timeline container -->
+    <div id="timeline-container" data-dojo-type="dijit.layout.ContentPane"
+         data-dojo-props="region:'bottom', splitter:true">
+        <!-- timeline legend -->
+        <div class="timeline-legend-container">
+            <div class="timeline-legend-header"></div>
+            <div class="btn-group btn-group-vertical topo-legend" data-toggle="buttons"></div>
+        </div>
+        <div class="timeline-message"></div>
+        <!-- timeline -->
+        <div id="timeline"></div>
+    </div>
+
+    <!-- about modal -->
+    <div class="js-modal modal-overlay " data-modal="foo">
+        <div class="modal-content column-18" role="dialog" aria-labelledby="modal" role="dialog">
+
+            <a class="js-modal-toggle right" href="#" aria-label="close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32" class="svg-icon"><path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/></svg>
+            </a>
+
+            <h3 class='trailer-half font-size-2'>About the USGS Historical Topographic Map Collection and Explorer</h3>
+            <p>
+                In 2014, the US Geological Survey (USGS) and Esri collaborated to bring the ever-increasing collection of US historical topographic maps to everyone through the USGS Historical Topographic Map Explorer. This app brings to life more than 178,000 maps dating from 1884 to 2006. Previously available only as printed lithographic copies, the legacy quadrangles are now available as web viewable images and free, downloadable digital files. The USGS Historical Topographic Map Explorer allows users to explore the historical maps, save the current view as a web map, and download the maps as high-resolution georeferenced images in GeoTIFF format for use in web mapping applications and GIS.
+            </p>
+            <p>
+                The historical maps are part of the USGS Historical Topographic Map Collection―a project that was launched in 2011. The collection includes all scales and all editions of the topographic maps published by the USGS since the inception of the topographic mapping program in 1884. The maps have been prepared at scales ranging from 1:10,000 to 1:250,000. Some scales have broad coverage across the United States, while others may have only one map.
+            </p>
+            <p>
+                The USGS scanned each map as is to capture the content and condition of each map sheet. All maps were georeferenced, and metadata was captured as part of the process. Using ArcGIS, the scanned maps were made into an image service that can be viewed on the web and provides links to allow users to download individual scanned images.
+            </p>
+            <p>
+                "We are so pleased to see these historic topographic maps being made more accessible to the nation," said Kevin Gallagher, associate director of Core Science Systems for the USGS. "We recognize the fundamental role of government in acquiring mapping information and putting it in the public domain. At the same time, we recognize the tremendous benefits of the private industry adding value through innovative approaches to access and distribution."
+            </p>
+            <div class="font-size-2">
+                Using the app is simple:
+            </div>
+            <ul style="list-style-type: none;">
+                <li>1.	Find or search for your place of interest.</li>
+                <li>2.	Click on the map view to see which USGS maps are available for that location.</li>
+                <li>3.	Use the timeline to explore thumbnails of the maps, see their extents, and select the ones you want to view.</li>
+                <li>4.	Use the slider for each map in the side panel to control its transparency and compare it to other maps.</li>
+                <li>5.	Use the links at the top of the app to share the current map view with others via social media or embeddable links.</li>
+                <li>6.	Download the map images, if you wish.</li>
+                <li>7.	Once logged in to your ArcGIS Online account, you can create a web map that includes the historical maps you have selected.</li>
+            </ul>
+            <p>
+                The symbols on the USGS topographic maps have changed over the years, and there is no single document describing all the symbols used on all USGS maps. However, this <a href="https://www.usgs.gov/faqs/map-symbology-has-changed-through-years-where-can-i-find-symbol-key-a-particular-historical-map" target="_blank">USGS web page</a> provides links to a number of documents that describe the symbols on their maps from about 1900 to the present.
+            </p>
+
+            <p>
+                "We are pleased to partner with the USGS on this app to bring this national treasure to life," said Jack Dangermond, president of Esri. "This application provides an easy way for anyone to explore the historic map collection by both place and time. The ArcGIS platform supports the building and sharing of amazing maps and content such as this collection.
+            </p>
+
+            <p>
+                Please contact us at <a href="mailto:topoexplorer@esri.com">topoexplorer@esri.com</a> with your questions or comments about the map collection or the online app.
+            </p>
+
+            <div class="text-right">
+                <button class="btn btn-white js-modal-toggle">close</button>
+            </div>
+        </div>
+    </div>
+
+    <a class="foo-modal js-modal-toggle btn hide" href="#" data-modal="foo"><span></span></a>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.4/js/calcite-web.min.js"></script>
+<script type="text/javascript" src="https://js.arcgis.com/3.27/"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/tooltip-min.js"></script>
+<script type="text/javascript" src="js/tmin.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="https://assets.adobedtm.com/2e9cd01e19dc5ac4867e752f17a2f1ea1923e5af/satelliteLib-0ed1001fd441a838aefe8e755be42aaafddcc46b.js"></script>
+</body>
 </html>
