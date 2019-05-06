@@ -215,5 +215,5 @@ A copy of the license is available in the repository's [license.txt](LICENSE?raw
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 [Description]: <http://www.esri.com/esri-news/releases/14-3qtr/new-york-to-la-history-of-americas-maps-in-one-app>
-[Demo]: <http://livingatlas.arcgis.com/topoexplorer/index.html>
+[Demo]: <https://livingatlas.arcgis.com/topoexplorer/index.html>
 [Zip]:<https://github.com/Esri/map-collection-explorer/archive/master.zip>
