@@ -14,75 +14,75 @@
  | limitations under the License.
  */
 require([
-        "dojo/_base/window",
-        "dojo/_base/array",
-        "dojo/_base/declare",
-        "dojo/_base/fx",
-        "dojo/_base/lang",
-        "dojo/Deferred",
-        "dojo/aspect",
-        "dojo/dom",
-        "dojo/dom-attr",
-        "dojo/dom-class",
-        "dojo/dom-construct",
-        "dojo/dom-geometry",
-        "dojo/dom-style",
-        "dojo/io-query",
-        "dojo/json",
-        "dojo/mouse",
-        "dojo/number",
-        "dojo/on",
-        "dojo/parser",
-        "dojo/promise/all",
-        "dojo/query",
-        "dojo/ready",
-        "dojo/topic",
-        "dojo/store/Observable",
-        "dojo/store/Memory",
-        "dgrid/extensions/DnD",
-        "dgrid/OnDemandGrid",
-        "dgrid/editor",
-        "dgrid/Selection",
-        "dgrid/Keyboard",
-        "dgrid/util/mouse",
-        "dijit/form/Button",
-        "dijit/form/HorizontalSlider",
-        "dijit/layout/BorderContainer",
-        "dijit/layout/ContentPane",
-        "dijit/registry",
+    "dojo/_base/window",
+    "dojo/_base/array",
+    "dojo/_base/declare",
+    "dojo/_base/fx",
+    "dojo/_base/lang",
+    "dojo/Deferred",
+    "dojo/aspect",
+    "dojo/dom",
+    "dojo/dom-attr",
+    "dojo/dom-class",
+    "dojo/dom-construct",
+    "dojo/dom-geometry",
+    "dojo/dom-style",
+    "dojo/io-query",
+    "dojo/json",
+    "dojo/mouse",
+    "dojo/number",
+    "dojo/on",
+    "dojo/parser",
+    "dojo/promise/all",
+    "dojo/query",
+    "dojo/ready",
+    "dojo/topic",
+    "dojo/store/Observable",
+    "dojo/store/Memory",
+    "dgrid/extensions/DnD",
+    "dgrid/OnDemandGrid",
+    "dgrid/editor",
+    "dgrid/Selection",
+    "dgrid/Keyboard",
+    "dgrid/util/mouse",
+    "dijit/form/Button",
+    "dijit/form/HorizontalSlider",
+    "dijit/layout/BorderContainer",
+    "dijit/layout/ContentPane",
+    "dijit/registry",
 
-        "esri/arcgis/OAuthInfo",
-        "esri/arcgis/Portal",
-        "esri/arcgis/utils",
-        "esri/dijit/Geocoder",
-        "esri/geometry/Extent",
-        "esri/geometry/Point",
-        "esri/geometry/webMercatorUtils",
-        "esri/IdentityManager",
-        "esri/SpatialReference",
-        "esri/graphic",
-        "esri/layers/ArcGISDynamicMapServiceLayer",
-        "esri/layers/ArcGISImageServiceLayer",
-        "esri/layers/ImageServiceParameters",
-        "esri/layers/MosaicRule",
-        "esri/map",
-        "esri/symbols/SimpleFillSymbol",
-        "esri/symbols/SimpleLineSymbol",
-        "esri/symbols/SimpleMarkerSymbol",
-        "esri/Color",
-        "esri/tasks/query",
-        "esri/tasks/QueryTask",
-        "esri/urlUtils",
-        "esri/request",
-        "esri/lang",
+    "esri/arcgis/OAuthInfo",
+    "esri/arcgis/Portal",
+    "esri/arcgis/utils",
+    "esri/dijit/Geocoder",
+    "esri/geometry/Extent",
+    "esri/geometry/Point",
+    "esri/geometry/webMercatorUtils",
+    "esri/IdentityManager",
+    "esri/SpatialReference",
+    "esri/graphic",
+    "esri/layers/ArcGISDynamicMapServiceLayer",
+    "esri/layers/ArcGISImageServiceLayer",
+    "esri/layers/ImageServiceParameters",
+    "esri/layers/MosaicRule",
+    "esri/map",
+    "esri/symbols/SimpleFillSymbol",
+    "esri/symbols/SimpleLineSymbol",
+    "esri/symbols/SimpleMarkerSymbol",
+    "esri/Color",
+    "esri/tasks/query",
+    "esri/tasks/QueryTask",
+    "esri/urlUtils",
+    "esri/request",
+    "esri/lang",
 
-        "dojo/domReady!"],
+    "dojo/domReady!"],
     function (win, array, declare, fx, lang,
-              Deferred, aspect, dom, domAttr, domClass, domConstruct, domGeom, domStyle, ioQuery, json, mouse, number, on, parser, all, query, ready, topic, Observable, Memory,
-              DnD, Grid, editor, Selection, Keyboard, mouseUtil, Button, HorizontalSlider, BorderContainer, ContentPane, registry,
-              OAuthInfo, arcgisPortal, arcgisUtils, Geocoder, Extent, Point, webMercatorUtils, esriId, SpatialReference, Graphic, ArcGISDynamicMapServiceLayer,
-              ArcGISImageServiceLayer, ImageServiceParameters, MosaicRule, Map, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol, Color,
-              Query, QueryTask, urlUtils, esriRequest, esriLang) {
+        Deferred, aspect, dom, domAttr, domClass, domConstruct, domGeom, domStyle, ioQuery, json, mouse, number, on, parser, all, query, ready, topic, Observable, Memory,
+        DnD, Grid, editor, Selection, Keyboard, mouseUtil, Button, HorizontalSlider, BorderContainer, ContentPane, registry,
+        OAuthInfo, arcgisPortal, arcgisUtils, Geocoder, Extent, Point, webMercatorUtils, esriId, SpatialReference, Graphic, ArcGISDynamicMapServiceLayer,
+        ArcGISImageServiceLayer, ImageServiceParameters, MosaicRule, Map, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol, Color,
+        Query, QueryTask, urlUtils, esriRequest, esriLang) {
 
         var map,
             imageServiceLayer,
@@ -160,11 +160,11 @@ require([
             initBaseMap(urlQueryObject);
             initGeocoderDijit("geocoder");
 
-            on(map, "load", mapLoadedHandler);
+            /*on(map, "load", mapLoadedHandler);
             on(map, "click", mapClickHandler);
             on(map, "extent-change", extentChangeHandler);
             on(map, "update-start", showLoadingIndicator);
-            on(map, "update-end", hideLoadingIndicator);
+            on(map, "update-end", hideLoadingIndicator);*/
             //
             on(query(".sign-in-btn")[0], "click", saveMapsHandler);
             on(query(".save-maps-btn")[0], "click", saveMapsHandler);
@@ -306,31 +306,31 @@ require([
             currentExtent.push(upperRight_y);
 
             esriRequest({
-                    url: Config.SHARING_HOST + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
-                    content: {
-                        f: "json",
-                        title: operationalLayers[0].title,
-                        type: "Web Map",
-                        extent: currentExtent.join(),
-                        text: JSON.stringify({
-                            "operationalLayers": operationalLayers,
-                            "baseMap": {
-                                "baseMapLayers": [{
-                                    "id": "defaultBasemap_0",
-                                    "layerType": "ArcGISTiledMapServiceLayer",
-                                    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
-                                    "visibility": true,
-                                    "opacity": 1,
-                                    "title": "World_Topo_Map"
-                                }], "title": "Topographic"
-                            },
-                            "spatialReference": {
-                                "wkid": 102100,
-                                "latestWkid": 3857
-                            }
-                        })
-                    }
-                }, {
+                url: Config.SHARING_HOST + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
+                content: {
+                    f: "json",
+                    title: operationalLayers[0].title,
+                    type: "Web Map",
+                    extent: currentExtent.join(),
+                    text: JSON.stringify({
+                        "operationalLayers": operationalLayers,
+                        "baseMap": {
+                            "baseMapLayers": [{
+                                "id": "defaultBasemap_0",
+                                "layerType": "ArcGISTiledMapServiceLayer",
+                                "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+                                "visibility": true,
+                                "opacity": 1,
+                                "title": "World_Topo_Map"
+                            }], "title": "Topographic"
+                        },
+                        "spatialReference": {
+                            "wkid": 102100,
+                            "latestWkid": 3857
+                        }
+                    })
+                }
+            }, {
                     usePost: true
                 }
             ).then(function (response) {
@@ -752,10 +752,10 @@ require([
             return domConstruct.create("div", {
                 "class": "renderedCell",
                 "innerHTML": "<button class='rm-layer-btn' data-objectid='" + objID + "'> X </button>" +
-                "<img class='rm-layer-icon' src='" + imgSrc + "'>" +
-                "<div class='thumbnailMapName' data-mapname-objectid='" + objID + "'>" + mapName + "</div>" +
-                "<div class='thumbnailMapImprintYear'>" + imprintYear + "</div>" +
-                "<div class='downloadLink'><a href='" + downloadLink + "' target='_parent'>download map</a></div>",
+                    "<img class='rm-layer-icon' src='" + imgSrc + "'>" +
+                    "<div class='thumbnailMapName' data-mapname-objectid='" + objID + "'>" + mapName + "</div>" +
+                    "<div class='thumbnailMapImprintYear'>" + imprintYear + "</div>" +
+                    "<div class='downloadLink'><a href='" + downloadLink + "' target='_parent'>download map</a></div>",
                 onclick: function (evt) {
                     var objID = evt.target.getAttribute("data-objectid");
                     var storeObj = store.query({
@@ -964,8 +964,8 @@ require([
                                 downloadLink: downloadLink,
                                 extent: extent
                             }, {
-                                before: firstRowObj[0]
-                            });
+                                    before: firstRowObj[0]
+                                });
                         }).then(function (evt) {
                             showGrid();
                             grid.refresh();
@@ -1020,7 +1020,7 @@ require([
                 query: function (query, options) {
                     options = options || {};
                     options.sort = [
-                        {attribute: "id"}
+                        { attribute: "id" }
                     ];
                     return Memory.prototype.query.call(this, query, options);
                 }
@@ -1249,10 +1249,27 @@ require([
                 _lng = Config.BASEMAP_INIT_LNG;
                 _lod = Config.BASEMAP_INIT_ZOOM;
             }
-            map = new Map("map", {
-                basemap: Config.BASEMAP_STYLE,
-                center: [_lng, _lat],
-                zoom: _lod
+            var createMapOptions = {
+                mapOptions: {
+                  slider: true,
+                  center: [_lng, _lat],
+                  zoom: _lod
+                },
+                usePopupManager: false,
+                geometryServiceURL: ""
+              };
+            arcgisUtils.createMap(Config.BASEMAP_WEB_MAP_ID, "map", createMapOptions).then(function (response) {
+                console.debug('RESPONSE', response);
+                map = response.map;
+
+                on(map, "load", mapLoadedHandler);
+                on(map, "click", mapClickHandler);
+                on(map, "extent-change", extentChangeHandler);
+                on(map, "update-start", showLoadingIndicator);
+                on(map, "update-end", hideLoadingIndicator);
+
+            }, function (error) {
+                console.debug('ERROR', error);
             });
         }
 
