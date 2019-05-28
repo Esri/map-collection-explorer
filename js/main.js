@@ -140,12 +140,14 @@ require([
             checkSignIn().then(function (response) {
                 var signInEle = query(".sign-in-message")[0];
                 var saveMapsEle = query(".save-maps-message")[0];
+                var deployRoot = getDeployRoot(window.location.host);
+                var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
                 if (response.message === Config.USER_NOT_SIGNED_IN) {
                     portal = response;
                     calcite.removeClass(signInEle, "hide");
                     calcite.addClass(saveMapsEle, "hide");
                 } else {
-                    portal = new arcgisPortal.Portal(Config.SHARING_HOST).signIn().then(function (portalUser) {
+                    portal = new arcgisPortal.Portal(sharingUrl).signIn().then(function (portalUser) {
                         portal = portalUser.portal;
                         credential = portalUser.credential;
                         calcite.addClass(signInEle, "hide");
@@ -246,10 +248,11 @@ require([
             if (portal.message === Config.USER_NOT_SIGNED_IN) {
                 // user is not signed in
                 var deployRoot = getDeployRoot(window.location.host);
-                esriId.getCredential("https://" + deployRoot + ".arcgis.com", {
+                var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
+                esriId.getCredential(sharingUrl, {
                     oAuthPopupConfirmation: false
                 }).then(function (response) {
-                    new arcgisPortal.Portal(Config.SHARING_HOST).signIn().then(function (portalUser) {
+                    new arcgisPortal.Portal(sharingUrl).signIn().then(function (portalUser) {
                         portal = portalUser.portal;
                         calcite.addClass(query(".sign-in-message")[0], "hide");
                         calcite.removeClass(query(".save-maps-message")[0], "hide");
@@ -305,8 +308,10 @@ require([
             currentExtent.push(upperRight_x);
             currentExtent.push(upperRight_y);
 
+            var deployRoot = getDeployRoot(window.location.host);
+            var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
             esriRequest({
-                url: Config.SHARING_HOST + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
+                url: sharingUrl + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
                 content: {
                     f: "json",
                     title: operationalLayers[0].title,
@@ -322,7 +327,8 @@ require([
                                 "visibility": true,
                                 "opacity": 1,
                                 "title": "World_Topo_Map"
-                            }], "title": "Topographic"
+                            }],
+                            "title": "Basemap"
                         },
                         "spatialReference": {
                             "wkid": 102100,
@@ -344,10 +350,10 @@ require([
                     var deployRoot = getDeployRoot(window.location.host);
                     var urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
                     if (esriLang.isDefined(urlKey)) {
-                        var customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : ".arcgis.com";
+                        var customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : "." + Config.DOMAIN;
                         window.open("https://" + urlKey + "." + customBaseUrl + "/home/webmap/viewer.html?webmap=" + itemID, "_blank");
                     } else {
-                        window.open("https://" + deployRoot + ".arcgis.com/home/webmap/viewer.html?webmap=" + itemID, "_blank");
+                        window.open("https://" + deployRoot + "." + Config.DOMAIN + "/home/webmap/viewer.html?webmap=" + itemID, "_blank");
                     }
                 } else {
 
@@ -1207,8 +1213,7 @@ require([
 
         function getUserProfile(credential) {
             var DEPLOY_ROOT = getDeployRoot(window.location.host);
-            var PORTAL_DOMAIN = ".arcgis.com";
-            var PORTAL_URL = "//" + DEPLOY_ROOT + PORTAL_DOMAIN;
+            var PORTAL_URL = "//" + DEPLOY_ROOT + "." + Config.DOMAIN;
 
             esriRequest({
                 url: "https://" + PORTAL_URL + "/sharing/rest/community/users/" + credential.userId + "?f=json",
@@ -1351,6 +1356,8 @@ require([
         }
 
         function _registerOAuthConfig() {
+            var deployRoot = getDeployRoot(window.location.host);
+            var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
             var left = (screen.width - 800) / 2;
             var top = (screen.height - 480) / 4;
             esriId.useSignInPage = false;
@@ -1359,7 +1366,7 @@ require([
                 // Uncomment this line to prevent the user's signed in state from being shared
                 // with other apps on the same domain with the same authNamespace value.
                 // authNamespace: "portal_oauth_inline",
-                portalUrl: Config.SHARING_HOST,
+                portalUrl: sharingUrl,
                 popup: true,
                 popupWindowFeatures: "height=480,width=800,toolbar=no,location=no,directories=no,resizable=no,menubar=no,copyhistory=no,scrollbars=no,status=no,top=" + top + ",left=" + left
             });
@@ -1575,6 +1582,7 @@ require([
         }
 
         function getDeployRoot(host) {
+            // logic specific to Living Atlas
             switch (host) {
                 case 'livingatlasdev.arcgis.com':
                     return 'devext';

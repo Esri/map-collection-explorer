@@ -2,8 +2,8 @@ var Config = {
     // Register your app with your own APP ID
     // https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/
     "APP_ID": "TopoExplorer",
-    
-    "SHARING_HOST": "https://" + "www.arcgis.com",
+
+    "DOMAIN": "arcgis.com",
     
     // DO NOT MODIFY
     "USER_NOT_SIGNED_IN": "User is not signed in.",
