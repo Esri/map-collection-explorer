@@ -1,5 +1,2 @@
-/.idea/map-collection-explorer.iml
-/.idea/vcs.xml
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/preferred-vcs.xml
+/.idea
+.DS_Store
