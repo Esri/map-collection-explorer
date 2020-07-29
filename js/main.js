@@ -160,14 +160,7 @@ require([
 
             urlQueryObject = getUrlParameters();
             initBaseMap(urlQueryObject);
-            initGeocoderDijit("geocoder");
 
-            /*on(map, "load", mapLoadedHandler);
-            on(map, "click", mapClickHandler);
-            on(map, "extent-change", extentChangeHandler);
-            on(map, "update-start", showLoadingIndicator);
-            on(map, "update-end", hideLoadingIndicator);*/
-            //
             on(query(".sign-in-btn")[0], "click", saveMapsHandler);
             on(query(".save-maps-btn")[0], "click", saveMapsHandler);
             on(query(".sign-out-btn")[0], "click", signOutBtnClickHandler);
@@ -1286,6 +1279,8 @@ require([
                 on(map, "update-start", showLoadingIndicator);
                 on(map, "update-end", hideLoadingIndicator);
 
+                initGeocoderDijit("geocoder");
+
             }, function (error) {
                 console.debug('ERROR', error);
             });
@@ -1305,6 +1300,7 @@ require([
         }
 
         function mapClickHandler(evt) {
+            console.debug("mapClickHandler")
             var crosshairSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CROSS, Config.CROSSHAIR_SIZE, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(Config.CROSSHAIR_FILL_COLOR), Config.CROSSHAIR_OPACITY));
             currentMapClickPoint = evt.mapPoint;
             currentLOD = map.getLevel();
@@ -1340,6 +1336,7 @@ require([
         }
 
         function mapLoadedHandler() {
+            console.debug("mapLoadedHandler");
             if (urlQueryObject !== null) {
                 initUrlParamData(urlQueryObject);
             }
