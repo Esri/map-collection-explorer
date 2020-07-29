@@ -285,11 +285,13 @@ require([
                     yr = storeObj.imprintYear;
                 }
                 return {
-                    "type": "Image Service",
+                    "layerType" : "ArcGISImageServiceLayer",
                     "url": url,
+                    "visibility" : true,
                     "title": "" + storeObj.name + " (" + yr + ")",
                     "format": "jpgpng",
                     "compressionQuality": 75,
+                    "opacity" : 1,
                     "layerDefinition": {
                         "definitionExpression": "OBJECTID = " + objectID
                     }
@@ -319,21 +321,32 @@ require([
                     extent: currentExtent.join(),
                     text: JSON.stringify({
                         "operationalLayers": operationalLayers,
-                        "baseMap": {
-                            "baseMapLayers": [{
-                                "id": "defaultBasemap_0",
-                                "layerType": "ArcGISTiledMapServiceLayer",
-                                "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
-                                "visibility": true,
-                                "opacity": 1,
-                                "title": "World_Topo_Map"
+                        "baseMap" : {
+                            "baseMapLayers" : [{
+                                "id" : "World_Hillshade",
+                                "layerType" : "ArcGISTiledMapServiceLayer",
+                                "url":"https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
+                                "visibility" : true,
+                                "opacity" : 1,
+                                "title" : "World Hillshade"
+                            } , {
+                                "id" : "VectorTile",
+                                "type":"VectorTileLayer",
+                                "layerType" : "VectorTileLayer",
+                                "title" : "World Topographic Map",
+                                "styleUrl" : "https://cdn.arcgis.com/sharing/rest/content/items/7dc6cea0b1764a1f9af2e679f642f0f5/resources/styles/root.json",
+                                "visibility" : true,
+                                "opacity" : 1
                             }],
-                            "title": "Basemap"
+                            "title" : "Topographic"
                         },
-                        "spatialReference": {
-                            "wkid": 102100,
-                            "latestWkid": 3857
-                        }
+                        "spatialReference" : {
+                            "wkid" : 102100,
+                            "latestWkid" : 3857
+                        }, 
+                        "authoringApp" : "TOPO Explorer",
+                        "authoringAppVersion" : "8.2",
+                        "version" : "2.17"
                     })
                 }
             }, {
