@@ -194,7 +194,7 @@ var Config = {
     "IMAGE_SERVER_JSON": "?culture=en&f=json&token=",
 
     /* Image service */
-    "IMAGE_SERVER": "https://historical1-stg.arcgis.com/arcgis/rest/services/USA_Historical_Topographic_Maps/ImageServer",
+    "IMAGE_SERVER": "https://utility.arcgis.com/usrsvcs/servers/88d12190e2494ce89374311800af4c4a/rest/services/USGS_Historical_Topographic_Maps/ImageServer",
     /* outfields */
     "OUTFIELDS": ['*'],
     /* WHERE clause */

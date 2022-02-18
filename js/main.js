@@ -261,17 +261,17 @@ require([
         function saveWebMap(credentials) {
             // TODO show loading saving indicator
             // User authenticated...
-            var tmp = [].slice.call(document.querySelectorAll('[data-objectid]'));
-            var objectIDs = tmp.map(function (x) {
+            let tmp = [].slice.call(document.querySelectorAll('[data-objectid]'));
+            let objectIDs = tmp.map(function (x) {
                 return x.dataset.objectid;
             });
 
-            var url = Config.IMAGE_SERVER;
-            var operationalLayers = array.map(objectIDs, function (objectID) {
-                var storeObj = store.query({
+            let url = Config.IMAGE_SERVER;
+            let operationalLayers = array.map(objectIDs, function (objectID) {
+                let storeObj = store.query({
                     objID: objectID
                 })[0];
-                var yr = "";
+                let yr = "";
                 if (storeObj.imprintYear === undefined) {
                     yr = "";
                 } else {
@@ -291,20 +291,20 @@ require([
                 };
             });
 
-            var currentExtent = [];
-            var lowerLeft = new Point(map.extent.xmin, map.extent.ymin);
-            var lowerLeft_x = webMercatorUtils.webMercatorToGeographic(lowerLeft).x;
-            var lowerLeft_y = webMercatorUtils.webMercatorToGeographic(lowerLeft).y;
+            let currentExtent = [];
+            let lowerLeft = new Point(map.extent.xmin, map.extent.ymin);
+            let lowerLeft_x = webMercatorUtils.webMercatorToGeographic(lowerLeft).x;
+            let lowerLeft_y = webMercatorUtils.webMercatorToGeographic(lowerLeft).y;
             currentExtent.push(lowerLeft_x);
             currentExtent.push(lowerLeft_y);
-            var upperRight = new Point(map.extent.xmax, map.extent.ymax);
-            var upperRight_x = webMercatorUtils.webMercatorToGeographic(upperRight).x;
-            var upperRight_y = webMercatorUtils.webMercatorToGeographic(upperRight).y;
+            let upperRight = new Point(map.extent.xmax, map.extent.ymax);
+            let upperRight_x = webMercatorUtils.webMercatorToGeographic(upperRight).x;
+            let upperRight_y = webMercatorUtils.webMercatorToGeographic(upperRight).y;
             currentExtent.push(upperRight_x);
             currentExtent.push(upperRight_y);
 
-            var deployRoot = getDeployRoot(window.location.host);
-            var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
+            let deployRoot = getDeployRoot(window.location.host);
+            let sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
             esriRequest({
                     url: sharingUrl + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
                     content: {
@@ -352,15 +352,19 @@ require([
                     // calcite.removeClass(successMsgEle, 'hide');
                     // fade message out
                     // this._fade(successMsgEle);
-                    var itemID = response.id;
-                    var deployRoot = getDeployRoot(window.location.host);
-                    var urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
+                    let itemID = response.id;
+                    let deployRoot = getDeployRoot(window.location.host);
+                    let urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
+
+                    const { portalProperties = {} } = portal;
+                    const { mapViewer = "classic" } = portalProperties;
+                    const mapViewType = (mapViewer === "classic") ? "/home/webmap/viewer.html" : "/apps/mapviewer/index.html";
+                    let url = `https://${deployRoot}.${Config.DOMAIN}${mapViewType}?webmap=${itemID}`;
                     if (esriLang.isDefined(urlKey)) {
-                        var customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : "." + Config.DOMAIN;
-                        window.open("https://" + urlKey + "." + customBaseUrl + "/apps/mapviewer/index.html?webmap=" + itemID, "_blank");
-                    } else {
-                        window.open("https://" + deployRoot + "." + Config.DOMAIN + "/apps/mapviewer/index.html?webmap=" + itemID, "_blank");
+                        const customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : "." + Config.DOMAIN;
+                        url = `https://${urlKey}.${customBaseUrl}${mapViewType}?webmap=${itemID}`;
                     }
+                    window.open(url, "_blank");
                 } else {
 
                 }
