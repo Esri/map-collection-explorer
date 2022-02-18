@@ -356,8 +356,9 @@ require([
                     let deployRoot = getDeployRoot(window.location.host);
                     let urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
 
+                    debugger
                     const { portalProperties = {} } = portal;
-                    const { mapViewer = "classic" } = portalProperties;
+                    const { mapViewer = "modern" } = portalProperties;
                     const mapViewType = (mapViewer === "classic") ? "/home/webmap/viewer.html" : "/apps/mapviewer/index.html";
                     let url = `https://${deployRoot}.${Config.DOMAIN}${mapViewType}?webmap=${itemID}`;
                     if (esriLang.isDefined(urlKey)) {
