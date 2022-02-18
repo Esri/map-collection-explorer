@@ -14,75 +14,75 @@
  | limitations under the License.
  */
 require([
-    "dojo/_base/window",
-    "dojo/_base/array",
-    "dojo/_base/declare",
-    "dojo/_base/fx",
-    "dojo/_base/lang",
-    "dojo/Deferred",
-    "dojo/aspect",
-    "dojo/dom",
-    "dojo/dom-attr",
-    "dojo/dom-class",
-    "dojo/dom-construct",
-    "dojo/dom-geometry",
-    "dojo/dom-style",
-    "dojo/io-query",
-    "dojo/json",
-    "dojo/mouse",
-    "dojo/number",
-    "dojo/on",
-    "dojo/parser",
-    "dojo/promise/all",
-    "dojo/query",
-    "dojo/ready",
-    "dojo/topic",
-    "dojo/store/Observable",
-    "dojo/store/Memory",
-    "dgrid/extensions/DnD",
-    "dgrid/OnDemandGrid",
-    "dgrid/editor",
-    "dgrid/Selection",
-    "dgrid/Keyboard",
-    "dgrid/util/mouse",
-    "dijit/form/Button",
-    "dijit/form/HorizontalSlider",
-    "dijit/layout/BorderContainer",
-    "dijit/layout/ContentPane",
-    "dijit/registry",
+        "dojo/_base/window",
+        "dojo/_base/array",
+        "dojo/_base/declare",
+        "dojo/_base/fx",
+        "dojo/_base/lang",
+        "dojo/Deferred",
+        "dojo/aspect",
+        "dojo/dom",
+        "dojo/dom-attr",
+        "dojo/dom-class",
+        "dojo/dom-construct",
+        "dojo/dom-geometry",
+        "dojo/dom-style",
+        "dojo/io-query",
+        "dojo/json",
+        "dojo/mouse",
+        "dojo/number",
+        "dojo/on",
+        "dojo/parser",
+        "dojo/promise/all",
+        "dojo/query",
+        "dojo/ready",
+        "dojo/topic",
+        "dojo/store/Observable",
+        "dojo/store/Memory",
+        "dgrid/extensions/DnD",
+        "dgrid/OnDemandGrid",
+        "dgrid/editor",
+        "dgrid/Selection",
+        "dgrid/Keyboard",
+        "dgrid/util/mouse",
+        "dijit/form/Button",
+        "dijit/form/HorizontalSlider",
+        "dijit/layout/BorderContainer",
+        "dijit/layout/ContentPane",
+        "dijit/registry",
 
-    "esri/arcgis/OAuthInfo",
-    "esri/arcgis/Portal",
-    "esri/arcgis/utils",
-    "esri/dijit/Geocoder",
-    "esri/geometry/Extent",
-    "esri/geometry/Point",
-    "esri/geometry/webMercatorUtils",
-    "esri/IdentityManager",
-    "esri/SpatialReference",
-    "esri/graphic",
-    "esri/layers/ArcGISDynamicMapServiceLayer",
-    "esri/layers/ArcGISImageServiceLayer",
-    "esri/layers/ImageServiceParameters",
-    "esri/layers/MosaicRule",
-    "esri/map",
-    "esri/symbols/SimpleFillSymbol",
-    "esri/symbols/SimpleLineSymbol",
-    "esri/symbols/SimpleMarkerSymbol",
-    "esri/Color",
-    "esri/tasks/query",
-    "esri/tasks/QueryTask",
-    "esri/urlUtils",
-    "esri/request",
-    "esri/lang",
+        "esri/arcgis/OAuthInfo",
+        "esri/arcgis/Portal",
+        "esri/arcgis/utils",
+        "esri/dijit/Geocoder",
+        "esri/geometry/Extent",
+        "esri/geometry/Point",
+        "esri/geometry/webMercatorUtils",
+        "esri/IdentityManager",
+        "esri/SpatialReference",
+        "esri/graphic",
+        "esri/layers/ArcGISDynamicMapServiceLayer",
+        "esri/layers/ArcGISImageServiceLayer",
+        "esri/layers/ImageServiceParameters",
+        "esri/layers/MosaicRule",
+        "esri/map",
+        "esri/symbols/SimpleFillSymbol",
+        "esri/symbols/SimpleLineSymbol",
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/Color",
+        "esri/tasks/query",
+        "esri/tasks/QueryTask",
+        "esri/urlUtils",
+        "esri/request",
+        "esri/lang",
 
-    "dojo/domReady!"],
+        "dojo/domReady!"],
     function (win, array, declare, fx, lang,
-        Deferred, aspect, dom, domAttr, domClass, domConstruct, domGeom, domStyle, ioQuery, json, mouse, number, on, parser, all, query, ready, topic, Observable, Memory,
-        DnD, Grid, editor, Selection, Keyboard, mouseUtil, Button, HorizontalSlider, BorderContainer, ContentPane, registry,
-        OAuthInfo, arcgisPortal, arcgisUtils, Geocoder, Extent, Point, webMercatorUtils, esriId, SpatialReference, Graphic, ArcGISDynamicMapServiceLayer,
-        ArcGISImageServiceLayer, ImageServiceParameters, MosaicRule, Map, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol, Color,
-        Query, QueryTask, urlUtils, esriRequest, esriLang) {
+              Deferred, aspect, dom, domAttr, domClass, domConstruct, domGeom, domStyle, ioQuery, json, mouse, number, on, parser, all, query, ready, topic, Observable, Memory,
+              DnD, Grid, editor, Selection, Keyboard, mouseUtil, Button, HorizontalSlider, BorderContainer, ContentPane, registry,
+              OAuthInfo, arcgisPortal, arcgisUtils, Geocoder, Extent, Point, webMercatorUtils, esriId, SpatialReference, Graphic, ArcGISDynamicMapServiceLayer,
+              ArcGISImageServiceLayer, ImageServiceParameters, MosaicRule, Map, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol, Color,
+              Query, QueryTask, urlUtils, esriRequest, esriLang) {
 
         var map,
             imageServiceLayer,
@@ -261,17 +261,17 @@ require([
         function saveWebMap(credentials) {
             // TODO show loading saving indicator
             // User authenticated...
-            var tmp = [].slice.call(document.querySelectorAll('[data-objectid]'));
-            var objectIDs = tmp.map(function (x) {
+            let tmp = [].slice.call(document.querySelectorAll('[data-objectid]'));
+            let objectIDs = tmp.map(function (x) {
                 return x.dataset.objectid;
             });
 
-            var url = Config.IMAGE_SERVER;
-            var operationalLayers = array.map(objectIDs, function (objectID) {
-                var storeObj = store.query({
+            let url = Config.IMAGE_SERVER;
+            let operationalLayers = array.map(objectIDs, function (objectID) {
+                let storeObj = store.query({
                     objID: objectID
                 })[0];
-                var yr = "";
+                let yr = "";
                 if (storeObj.imprintYear === undefined) {
                     yr = "";
                 } else {
@@ -291,58 +291,58 @@ require([
                 };
             });
 
-            var currentExtent = [];
-            var lowerLeft = new Point(map.extent.xmin, map.extent.ymin);
-            var lowerLeft_x = webMercatorUtils.webMercatorToGeographic(lowerLeft).x;
-            var lowerLeft_y = webMercatorUtils.webMercatorToGeographic(lowerLeft).y;
+            let currentExtent = [];
+            let lowerLeft = new Point(map.extent.xmin, map.extent.ymin);
+            let lowerLeft_x = webMercatorUtils.webMercatorToGeographic(lowerLeft).x;
+            let lowerLeft_y = webMercatorUtils.webMercatorToGeographic(lowerLeft).y;
             currentExtent.push(lowerLeft_x);
             currentExtent.push(lowerLeft_y);
-            var upperRight = new Point(map.extent.xmax, map.extent.ymax);
-            var upperRight_x = webMercatorUtils.webMercatorToGeographic(upperRight).x;
-            var upperRight_y = webMercatorUtils.webMercatorToGeographic(upperRight).y;
+            let upperRight = new Point(map.extent.xmax, map.extent.ymax);
+            let upperRight_x = webMercatorUtils.webMercatorToGeographic(upperRight).x;
+            let upperRight_y = webMercatorUtils.webMercatorToGeographic(upperRight).y;
             currentExtent.push(upperRight_x);
             currentExtent.push(upperRight_y);
 
-            var deployRoot = getDeployRoot(window.location.host);
-            var sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
+            let deployRoot = getDeployRoot(window.location.host);
+            let sharingUrl = "https://" + deployRoot + "." + Config.DOMAIN;
             esriRequest({
-                url: sharingUrl + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
-                content: {
-                    f: "json",
-                    title: operationalLayers[0].title,
-                    type: "Web Map",
-                    extent: currentExtent.join(),
-                    text: JSON.stringify({
-                        "operationalLayers": operationalLayers,
-                        "baseMap" : {
-                            "baseMapLayers" : [{
-                                "id" : "World_Hillshade",
-                                "layerType" : "ArcGISTiledMapServiceLayer",
-                                "url":"https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
-                                "visibility" : true,
-                                "opacity" : 1,
-                                "title" : "World Hillshade"
-                            } , {
-                                "id" : "VectorTile",
-                                "type":"VectorTileLayer",
-                                "layerType" : "VectorTileLayer",
-                                "title" : "World Topographic Map",
-                                "styleUrl" : "https://cdn.arcgis.com/sharing/rest/content/items/7dc6cea0b1764a1f9af2e679f642f0f5/resources/styles/root.json",
-                                "visibility" : true,
-                                "opacity" : 1
-                            }],
-                            "title" : "Topographic"
-                        },
-                        "spatialReference" : {
-                            "wkid" : 102100,
-                            "latestWkid" : 3857
-                        }, 
-                        "authoringApp" : "TOPO Explorer",
-                        "authoringAppVersion" : "8.2",
-                        "version" : "2.17"
-                    })
-                }
-            }, {
+                    url: sharingUrl + "/sharing/rest/content/users/" + credentials.userId + "/addItem",
+                    content: {
+                        f: "json",
+                        title: operationalLayers[0].title,
+                        type: "Web Map",
+                        extent: currentExtent.join(),
+                        text: JSON.stringify({
+                            "operationalLayers": operationalLayers,
+                            "baseMap" : {
+                                "baseMapLayers" : [{
+                                    "id" : "World_Hillshade",
+                                    "layerType" : "ArcGISTiledMapServiceLayer",
+                                    "url":"https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
+                                    "visibility" : true,
+                                    "opacity" : 1,
+                                    "title" : "World Hillshade"
+                                } , {
+                                    "id" : "VectorTile",
+                                    "type":"VectorTileLayer",
+                                    "layerType" : "VectorTileLayer",
+                                    "title" : "World Topographic Map",
+                                    "styleUrl" : "https://cdn.arcgis.com/sharing/rest/content/items/7dc6cea0b1764a1f9af2e679f642f0f5/resources/styles/root.json",
+                                    "visibility" : true,
+                                    "opacity" : 1
+                                }],
+                                "title" : "Topographic"
+                            },
+                            "spatialReference" : {
+                                "wkid" : 102100,
+                                "latestWkid" : 3857
+                            },
+                            "authoringApp" : "TOPO Explorer",
+                            "authoringAppVersion" : "8.2",
+                            "version" : "2.17"
+                        })
+                    }
+                }, {
                     usePost: true
                 }
             ).then(function (response) {
@@ -352,15 +352,19 @@ require([
                     // calcite.removeClass(successMsgEle, 'hide');
                     // fade message out
                     // this._fade(successMsgEle);
-                    var itemID = response.id;
-                    var deployRoot = getDeployRoot(window.location.host);
-                    var urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
+                    let itemID = response.id;
+                    let deployRoot = getDeployRoot(window.location.host);
+                    let urlKey = esriLang.isDefined(portal.urlKey) ? portal.urlKey : null;
+
+                    const { portalProperties = {} } = portal;
+                    const { mapViewer = "classic" } = portalProperties;
+                    const mapViewType = (mapViewer === "classic") ? "/home/webmap/viewer.html" : "/apps/mapviewer/index.html";
+                    let url = `https://${deployRoot}.${Config.DOMAIN}${mapViewType}?webmap=${itemID}`;
                     if (esriLang.isDefined(urlKey)) {
-                        var customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : "." + Config.DOMAIN;
-                        window.open("https://" + urlKey + "." + customBaseUrl + "/home/webmap/viewer.html?webmap=" + itemID, "_blank");
-                    } else {
-                        window.open("https://" + deployRoot + "." + Config.DOMAIN + "/home/webmap/viewer.html?webmap=" + itemID, "_blank");
+                        const customBaseUrl = esriLang.isDefined(portal.customBaseUrl) ? portal.customBaseUrl : "." + Config.DOMAIN;
+                        url = `https://${urlKey}.${customBaseUrl}${mapViewType}?webmap=${itemID}`;
                     }
+                    window.open(url, "_blank");
                 } else {
 
                 }
@@ -976,8 +980,8 @@ require([
                                 downloadLink: downloadLink,
                                 extent: extent
                             }, {
-                                    before: firstRowObj[0]
-                                });
+                                before: firstRowObj[0]
+                            });
                         }).then(function (evt) {
                             showGrid();
                             grid.refresh();
@@ -1262,13 +1266,13 @@ require([
             }
             var createMapOptions = {
                 mapOptions: {
-                  slider: true,
-                  center: [_lng, _lat],
-                  zoom: _lod
+                    slider: true,
+                    center: [_lng, _lat],
+                    zoom: _lod
                 },
                 usePopupManager: false,
                 geometryServiceURL: ""
-              };
+            };
             arcgisUtils.createMap(Config.BASEMAP_WEB_MAP_ID, "map", createMapOptions).then(function (response) {
                 console.debug('RESPONSE', response);
                 map = response.map;

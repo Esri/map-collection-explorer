@@ -4,7 +4,7 @@ var Config = {
     "APP_ID": "TopoExplorer",
 
     "DOMAIN": "arcgis.com",
-    
+
     // DO NOT MODIFY
     "USER_NOT_SIGNED_IN": "User is not signed in.",
 
@@ -63,20 +63,20 @@ var Config = {
      *
      **************************************************************************/
     /* Default Basemap */
-    /* 
-        The item ID used must be from an item in ArcGIS Online that is of the 
+    /*
+        The item ID used must be from an item in ArcGIS Online that is of the
         type 'Web Map'
 
-        If working with an item whose basemap layer does not have a geographic 
-        or Web Mercator spatial reference, you will need to make certain the 
-        createMap method projects the item's extent using a geometry service 
-        or by passing in an extent using  options.mapOptions. 
-        
-        If using a geometry service, it will either create a new GeometryService 
-        using the  options.geometryServiceURL or it will use the GeometryService 
+        If working with an item whose basemap layer does not have a geographic
+        or Web Mercator spatial reference, you will need to make certain the
+        createMap method projects the item's extent using a geometry service
+        or by passing in an extent using  options.mapOptions.
+
+        If using a geometry service, it will either create a new GeometryService
+        using the  options.geometryServiceURL or it will use the GeometryService
         at esriConfig.defaults.geometryService (if it exists).
     */
-    "BASEMAP_WEB_MAP_ID": "d5e02a0c1f2b4ec399823fdd3c2fdebd",
+    "BASEMAP_WEB_MAP_ID": "67372ff42cd145319639a99152b15bc3",
     /* default coordinates and zoom level */
     "BASEMAP_INIT_LAT": 29.939833,
     "BASEMAP_INIT_LNG": -90.076046,
